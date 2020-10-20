@@ -1,0 +1,2915 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>Material Design for Bootstrap</title>
+  <!-- MDB icon -->
+  <link rel="icon" href="img/mdb-favicon.ico" type="image/x-icon">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
+  <!-- Google Fonts Roboto -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap">
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="static/bootstrap.min.css">
+  <!-- Material Design Bootstrap -->
+  <link rel="stylesheet" href="static/mdb.min.css">
+  <!-- Your custom styles (optional) -->
+  <link rel="stylesheet" href="static/style.css">
+  <!-- MDBootstrap Datatables  -->
+  <link href="static/datatables2.min.css" rel="stylesheet">
+  <!-- MDBootstrap Card Addons  -->
+  <link href="static/cards-extended.min.css" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Start your project here-->  
+  <nav class="navbar navbar-expand-lg navbar-dark primary-color">
+    <a class="navbar-brand" href="/">NLP Wine</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="model">Model</a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="winelist">Wine List</a>
+        </li>
+      </ul>
+    </div>
+    <!-- Button to trigger modal-->
+    <button class="btn purple-gradient float-right" data-toggle="modal" data-target="#wineModelModal"><i class="fas fa-wine-bottle mr-2"></i>Try it out!</button>
+    <!-- Modal -->
+  <div class="modal fade" id="wineModelModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+  aria-hidden="true">
+
+  <!-- Add .modal-dialog-centered to .modal-dialog to vertically center the modal -->
+  <div class="modal-dialog modal-dialog-centered" role="document">
+
+
+    <div class="modal-content">
+      <!-- <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Write a wine review!</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div> -->
+      <div class="modal-body">
+        <div class="md-form mb-4 purple-textarea active-purple-textarea">
+          <i class="fas fa-angle-double-right prefix"></i>
+          <textarea id="form21" class="md-textarea form-control" rows="3"></textarea>
+          <label for="form21">Write a wine review!</label>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Rate</button>
+      </div>
+    </div>
+  </div>
+</div>
+  </nav>
+  <div style="height: 20px;"></div>
+  <div class="container">
+    <!-- Card -->
+    <div class="card gradient-card">
+
+      <div class="card-image" style="background-image: url(https://lifeasahuman.com/files/2019/06/wine-4109347_960_720.jpg);">
+
+        <!-- Content -->
+        <a href="#!">
+          <div class="text-white d-flex h-100 mask purple-gradient-rgba">
+            <div class="first-content align-self-center p-3">
+              <h3 class="card-title">WineSpectator.com</h3>
+              <p class="lead mb-0">Top 100 Wines List</p>
+            </div>
+            <div class="second-content  align-self-center mx-auto text-center">
+              <i class="fas fa-wine-bottle fa-3x"></i>
+            </div>
+          </div>
+        </a>
+      </div>
+      <!-- Content -->
+      <div class="card-body white">
+        <h4 class="text-uppercase font-weight-bold my-4">Where we got the data??</h4>
+        <p class="text-muted" align="justify">"Each year, Wine Spectator editors survey the wines reviewed over the previous 12 months and select our Top 100, based on quality, value, availability and excitement. This annual list honors successful wineries, regions and vintages around the world." - winespectator.com</p>
+      </div>
+  </div>
+  </div>
+  <div style="height: 20px;"></div>
+<div class="container">
+  <ul class="nav nav-tabs nav-justified md-tabs primary-color" id="myTabJust" role="tablist">
+    <li class="nav-item">
+      <a class="nav-link active" id="home-tab-just" data-toggle="tab" href="#home-just" role="tab" aria-controls="home-just"
+        aria-selected="true">2019</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" id="profile-tab-just" data-toggle="tab" href="#profile-just" role="tab" aria-controls="profile-just"
+        aria-selected="false">2018</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" id="contact-tab-just" data-toggle="tab" href="#contact-just" role="tab" aria-controls="contact-just"
+        aria-selected="false">2017</a>
+    </li>
+  </ul>
+
+  
+
+  <div class="tab-content card pt-5" id="myTabContentJust">
+    <div class="tab-pane fade show active" id="home-just" role="tabpanel" aria-labelledby="home-tab-just">
+
+      <!-- <table class="table table-striped table-bordered table-sm" cellspacing="0"
+      width="100%"> -->
+      <table id="dtVerticalScrollExample" class="table table-striped table-bordered table-sm" cellspacing="0"
+  width="100%">
+    <thead><tr><th title="Field #1"></th>
+    <th title="Field #2">Wine</th>
+    <th title="Field #3">Description</th>
+    <th title="Field #4">Vintage</th>
+    <th title="Field #5">Price</th>
+    <th title="Field #6">Score</th>
+    <th title="Field #7">Model Rating</th>
+    </tr></thead>
+    <tbody><tr>
+    <td align="right">0</td>
+    <td>Château Léoville Barton St.-Julien-</td>
+    <td>This is so vivid as it brims with pastis-soaked plum, blackberry, black currant and blueberry paste flavors, all carried by a perfectly integrated brambly spine. Tar and ganache notes give the finish an extra kick while everything stays within the mouthwatering roasted apple wood frame. Both regal and rambunctious, this is St.-Julien to a T. Best from 2025 through 2040. 11,667 cases made. —JM</td>
+    <td>2016</td>
+    <td>$98 </td>
+    <td align="right">97.0</td>
+    <td align="right">4</td>
+    </tr>
+    <tr>
+    <td align="right">1</td>
+    <td>Mayacamas Cabernet Sauvignon Mount Veeder-</td>
+    <td>Youthfully compact, with tightly wound black currant, bitter plum and dark blueberry notes, this needs time to meld with the charcoal, bay leaf and tar streaks, but the mouthwatering cut on the finish suggests that won&#39;t be a problem. Offers a long echo of juniper at the end. Best from 2023 through 2040. 2,250 cases made. —JM</td>
+    <td>2015</td>
+    <td>$125 </td>
+    <td align="right">96.0</td>
+    <td align="right">4</td>
+    </tr>
+    <tr>
+    <td align="right">2</td>
+    <td>San Giusto a Rentennano Chianti Classico-</td>
+    <td>This red offers a pure core of black currant, blackberry and violet flavors shaded by earth and mint notes. The tannins are uplifting and refined. This has terrific energy and balance, with a long, expansive aftertaste of fruit, earth and mineral. Should have a long life ahead. Sangiovese and Canaiolo. Best from 2021 through 2043. 7,500 cases made, 750 cases imported. —BS</td>
+    <td>2016</td>
+    <td>$36 </td>
+    <td align="right">95.0</td>
+    <td align="right">4</td>
+    </tr>
+    <tr>
+    <td align="right">3</td>
+    <td>Groth Cabernet Sauvignon Oakville Reserve-</td>
+    <td>This delivers a very tightly focused, almost piercing beam of cassis, raspberry coulis and bitter cherry fruit, scored with singed alder and iron notes. Incense and tobacco details chime in on the finish. Long and refined, with the fruit leaving a sweet and mouthwatering echo. Best from 2022 through 2038. 4,800 cases made. —JM</td>
+    <td>2016</td>
+    <td>$150 </td>
+    <td align="right">96.0</td>
+    <td align="right">4</td>
+    </tr>
+    <tr>
+    <td align="right">4</td>
+    <td>Roederer Estate Brut Anderson Valley L&#39;Ermitage-</td>
+    <td>Extravagant, yet balanced and refined, with lush, crisp brioche, fresh ginger and spice, roasted hazelnut and Asian pear flavors that fan out on the lengthy finish. Drink now through 2020. 4,217 cases made. —TF</td>
+    <td>2012</td>
+    <td>$48 </td>
+    <td align="right">95.0</td>
+    <td align="right">3</td>
+    </tr>
+    <tr>
+    <td align="right">5</td>
+    <td>Château de Beaucastel Châteauneuf-du-Pape-</td>
+    <td>Youthfully reticent, but warm and polished in feel, with a large core of cassis, raspberry and cherry puree notes lying in wait for now. Threads of red licorice, warm stone and singed mesquite and cedar emerge steadily through the lengthy finish as the fruit unwinds slowly. Concentrated yet precise. Sock this away in the cellar. Grenache, Cinsault, Syrah, Mourvèdre and Counoise. Best from 2023 through 2040. 6,250 cases made, 3,500 cases imported. —JM</td>
+    <td>2016</td>
+    <td>$107 </td>
+    <td align="right">97.0</td>
+    <td align="right">4</td>
+    </tr>
+    <tr>
+    <td align="right">6</td>
+    <td>Ramey Chardonnay Napa Valley Carneros Hyde Vineyard-</td>
+    <td>Precise and powerfully structured, with intense Asian pear, apple and ripe citrus flavors that feature rich, savory notes. Displays concentrated minerality on the spicy and textured finish. Should blossom in the cellar. Best from 2021 through 2025. 1,256 cases made. —KM</td>
+    <td>2016</td>
+    <td>$65 </td>
+    <td align="right">95.0</td>
+    <td align="right">4</td>
+    </tr>
+    <tr>
+    <td align="right">7</td>
+    <td>Château Pichon Baron Pauillac-</td>
+    <td>This gushes with dark fig and black currant compote flavors backed by lively sweet tobacco and singed alder edges. Very fleshy in feel, though there&#39;s ample grip to keep this red grounded, echoing with tar and humus accents through the finish. A thumper. Best from 2025 through 2040. 13,500 cases made. —JM</td>
+    <td>2016</td>
+    <td>$176 </td>
+    <td align="right">96.0</td>
+    <td align="right">3</td>
+    </tr>
+    <tr>
+    <td align="right">8</td>
+    <td>Penfolds Shiraz Barossa Valley RWT Bin 798-</td>
+    <td>Offers a lush, juicy mix of blackberry, blueberry and black cherry flavors that appears seamless, integrating with notes of amaretto, clove and lavender. Plush, juicy and very generous on the long, expressive finish. Drink now through 2034. 1,156 cases imported. —MW</td>
+    <td>2017</td>
+    <td>$150 </td>
+    <td align="right">96.0</td>
+    <td align="right">3</td>
+    </tr>
+    <tr>
+    <td align="right">9</td>
+    <td>Viña Almaviva Puente Alto-</td>
+    <td>Elegant, powerful and well-structured, with a refined mix of dark fruit, dried red fruit and spice flavors. Dried herbal notes emerge midpalate, with a minerally finish that is long and rich-tasting. Cabernet Sauvignon, Carmenère, Cabernet Franc and Petit Verdot. Drink now through 2025. 15,000 cases made, 3,000 cases imported. —KM</td>
+    <td>2016</td>
+    <td>$130 </td>
+    <td align="right">95.0</td>
+    <td align="right">4</td>
+    </tr>
+    <tr>
+    <td align="right">10</td>
+    <td>Moccagatta Barbaresco Bric Balin-</td>
+    <td>Offers an intense display of cherry, kirsch, rose, sandalwood and spice aromas and flavors. The kaleidoscope of flavors is matched to a firm, racy structure. It all comes together on the never-ending, mineral-tinged aftertaste. Best from 2023 through 2043. 1,100 cases made, 500 cases imported. —BS</td>
+    <td>2015</td>
+    <td>$62 </td>
+    <td align="right">97.0</td>
+    <td align="right">4</td>
+    </tr>
+    <tr>
+    <td align="right">11</td>
+    <td>Carlisle Zinfandel Russian River Valley Papera Ranch-</td>
+    <td>A stunning wine, jammed with fruit and personality yet retains a sense of refinement. Aromas of blackberry and violet open to complex cherry and licorice notes and a hint of garrigue. Tannins are broad but polished. Drink now through 2027. 1,005 cases made. —TF</td>
+    <td>2016</td>
+    <td>$47 </td>
+    <td align="right">96.0</td>
+    <td align="right">4</td>
+    </tr>
+    <tr>
+    <td align="right">12</td>
+    <td>Bodegas Artevino Rioja Orben-</td>
+    <td>This big red has a muscular structure, but the flavors are finely detailed, with black cherry, leafy, licorice and smoke notes mingling over sturdy tannins. Harmonious, showing depth and elegance. Best from 2020 through 2030. 2,486 cases made, 500 cases imported. —TM</td>
+    <td>2016</td>
+    <td>$32 </td>
+    <td align="right">95.0</td>
+    <td align="right">3</td>
+    </tr>
+    <tr>
+    <td align="right">13</td>
+    <td>Tensley Syrah Santa Barbara County Colson Canyon Vineyard-</td>
+    <td>Deeply structured yet rich and polished, with smoked meat, huckleberry and garrigue notes that jaunt toward big but refined tannins on the finish. Drink now through 2028. 1,950 cases made. —TF</td>
+    <td>2017</td>
+    <td>$42 </td>
+    <td align="right">95.0</td>
+    <td align="right">3</td>
+    </tr>
+    <tr>
+    <td align="right">14</td>
+    <td>Domaine Huet Vouvray Demi-Sec Le Mont-</td>
+    <td>This elegant white shows pedigree, featuring wonderful harmony and great complexity, with persimmon and quince flavors, while cardamom, coriander and star anise notes glide along the edges. The acidity gives this power, providing balance, but also incredible energy that runs throughout. Very long and inviting. Best from 2020 through 2038. 1,000 cases made. —AZ</td>
+    <td>2018</td>
+    <td>$45 </td>
+    <td align="right">95.0</td>
+    <td align="right">4</td>
+    </tr>
+    <tr>
+    <td align="right">15</td>
+    <td>Château Branaire-Ducru St.-Julien-</td>
+    <td>The core of this red is loaded with pure plum, blueberry and black currant fruit flavors. The polished structure is integrated, with alluring ganache, anise and sweet tobacco notes throughout, all in a polished and balanced frame. A very classy red that isn&#39;t shy about its power but pushes its purity to the fore. Best from 2024 through 2039. 15,000 cases made. —JM</td>
+    <td>2016</td>
+    <td>$65 </td>
+    <td align="right">96.0</td>
+    <td align="right">4</td>
+    </tr>
+    <tr>
+    <td align="right">16</td>
+    <td>Castellare di Castellina Chianti Classico-</td>
+    <td>A beam of pure cherry and blackberry fruit defines this intense, racy red, which is firm and tensile, with fine balance and a lingering aftertaste of vibrant fruit, graphite and tobacco flavors. Sangioveto and Canaiolo. Drink now through 2033. 10,000 cases made, 5,000 cases imported. —BS</td>
+    <td>2017</td>
+    <td>$22 </td>
+    <td align="right">94.0</td>
+    <td align="right">3</td>
+    </tr>
+    <tr>
+    <td align="right">17</td>
+    <td>Denner Dirt Worshipper Central Coast-</td>
+    <td>Offers an impressive combination of bold, concentrated fruit with a polished, refined structure, delivering black plum, licorice and smoky pepper flavors, accented by crushed stone and fresh earth details. The tannins are broad but harmonious. Syrah, Roussanne and Viognier. Drink now through 2027. 1,123 cases made. —TF</td>
+    <td>2016</td>
+    <td>$75 </td>
+    <td align="right">96.0</td>
+    <td align="right">4</td>
+    </tr>
+    <tr>
+    <td align="right">18</td>
+    <td>Tenuta Bibbiano Chianti Classico Riserva-</td>
+    <td>A deep well of cherry, plum, floral, wild thyme and iron aromas and flavors highlight this complex, vibrant red, which is beautifully balanced and taut, with firm, well-integrated tannins and lively acidity that will allow this to age gracefully. Best from 2021 through 2045. 2,500 cases made, 750 cases imported. —BS</td>
+    <td>2015</td>
+    <td>$30 </td>
+    <td align="right">96.0</td>
+    <td align="right">4</td>
+    </tr>
+    <tr>
+    <td align="right">19</td>
+    <td>Sans Liege The Offering Santa Barbara County-</td>
+    <td>Distinctive, refined and well-built, offering expressive black cherry, cigar box, green olive and cured meat accents that build richness on the long finish. Grenache, Syrah, Mourvèdre and Viognier. Drink now through 2026. 2,450 cases made. —TF</td>
+    <td>2016</td>
+    <td>$29 </td>
+    <td align="right">94.0</td>
+    <td align="right">4</td>
+    </tr>
+    <tr>
+    <td align="right">20</td>
+    <td>E. Guigal Côte-Rôtie Brune et Blonde-</td>
+    <td>Dark and winey, this is youthfully tight, with a core of intense black cherry and black currant preserves, encased within layers of olive, singed alder, juniper and iron. Very focused and driven through the finish. Cellar for maximum effect. Best from 2022 through 2038. Tasted twice, with consistent notes. 23,333 cases made, 700 cases imported. —JM</td>
+    <td>2015</td>
+    <td>$75 </td>
+    <td align="right">96.0</td>
+    <td align="right">4</td>
+    </tr>
+    <tr>
+    <td align="right">21</td>
+    <td>Saxum James Berry Vineyard Paso Robles Willow Creek District-</td>
+    <td>Plush, polished and dynamic, with complexly layered blackberry, violet, garrigue, crushed stone and smoky pepper flavors that build richness and spirit toward refined tannins. Grenache, Syrah, Counoise and Mataro. Drink now through 2028. 1,000 cases made. —TF</td>
+    <td>2016</td>
+    <td>$98 </td>
+    <td align="right">97.0</td>
+    <td align="right">4</td>
+    </tr>
+    <tr>
+    <td align="right">22</td>
+    <td>Domaine de Chevalier Pessac-Léognan-</td>
+    <td>The core of fruit flavor here is sappy and dense, with lots of kirsch, raspberry pâte de fruit and plum reduction notes, yet this stays fresh and racy overall, with a bright iron spine, flashes of tea and tobacco and a long finish that shows a wonderful infusion of alder and tobacco flavors. Offers a lovely combination of prodigious fruit details, with a tug of earth. Best from 2024 through 2038. 12,000 cases made. —JM</td>
+    <td>2016</td>
+    <td>$84 </td>
+    <td align="right">96.0</td>
+    <td align="right">4</td>
+    </tr>
+    <tr>
+    <td align="right">23</td>
+    <td>Bodegas Mas Alta Priorat La Vilella Alta Black Slate-</td>
+    <td>This generous red features a round, soft texture that carries ripe black fruit flavors, laced with licorice, toast and loamy earth notes. Offers well-integrated tannins and gentle acidity. Pretty floral and cinnamon details emerge on the finish. Drink now through 2028. 1,800 cases imported. —TM</td>
+    <td>2016</td>
+    <td>$23 </td>
+    <td align="right">93.0</td>
+    <td align="right">3</td>
+    </tr>
+    <tr>
+    <td align="right">24</td>
+    <td>John Duval Plexus Red Barossa Valley-</td>
+    <td>Vibrant, with blackberry, blueberry and spiced plum flavors that are fresh, plump and generous at the core. Impressively elegant and seamless, featuring fresh earth, spice and floral notes that linger effortlessly alongside fine-grained tannins. Shiraz, Grenache and Mourvèdre. Drink now through 2037. 2,000 cases imported. —MW</td>
+    <td>2017</td>
+    <td>$40 </td>
+    <td align="right">94.0</td>
+    <td align="right">3</td>
+    </tr>
+    <tr>
+    <td align="right">25</td>
+    <td>Tolaini Cabernet Sauvignon Toscana Legit-</td>
+    <td>This is broad and incisive, delivering black currant, plum, leather, earth and wild herb flavors. Dense and beefy, yet with ample fruit for balance, driven by vibrant acidity. This is starting to mellow but still has years of life ahead. Drink now through 2036. 15,000 cases made, 3,000 cases imported. —BS</td>
+    <td>2013</td>
+    <td>$45 </td>
+    <td align="right">94.0</td>
+    <td align="right">3</td>
+    </tr>
+    <tr>
+    <td align="right">26</td>
+    <td>Renato Ratti Barolo Marcenasco-</td>
+    <td>A deep well of macerated cherry, plum, freshly cut grass, white pepper and tar flavors highlights this dense, muscular red. Quickly goes from enticing to closed down as the beefy tannins ply the finish. All the components are there. Best from 2022 through 2043. 3,500 cases imported. —BS</td>
+    <td>2015</td>
+    <td>$65 </td>
+    <td align="right">95.0</td>
+    <td align="right">3</td>
+    </tr>
+    <tr>
+    <td align="right">27</td>
+    <td>Leeuwin Chardonnay Margaret River Art Series-</td>
+    <td>Refined and elegant, this white is supple, yet intense and precise, with lemon curd, apricot, honeycomb and mandarin orange flavors, accented by floral and mineral details. The secret weapon here is the sleek acidity, which weaves in and out, giving the flavors definition and verve. Drink now through 2034. 800 cases imported. —MW</td>
+    <td>2016</td>
+    <td>$89 </td>
+    <td align="right">96.0</td>
+    <td align="right">4</td>
+    </tr>
+    <tr>
+    <td align="right">28</td>
+    <td>Petra Toscana Zingari-</td>
+    <td>A well of dark cherry, black currant and blackberry fruit makes this red sumptuous and inviting. Fresh earth, thyme and rosemary accents add depth. A mineral element emerges on the long finish. Shows fine balance overall. Merlot, Sangiovese, Petit Verdot and Syrah. Drink now through 2032. 7,000 cases made, 1,500 cases imported. —BS</td>
+    <td>2017</td>
+    <td>$15 </td>
+    <td align="right">93.0</td>
+    <td align="right">4</td>
+    </tr>
+    <tr>
+    <td align="right">29</td>
+    <td>Domaine de la Charbonnière Châteauneuf-du-Pape-</td>
+    <td>Features the dense, dark, ripe profile of the vintage, with a core of steeped currant, fig and boysenberry fruit, supported by a dense structure, notes of dark earth, tobacco and bitter cocoa, and a long finish that ripples with latent energy. Grenache, Syrah and Mourvèdre. Best from 2023 through 2037. 2,400 cases made, 500 cases imported. —JM</td>
+    <td>2016</td>
+    <td>$40 </td>
+    <td align="right">94.0</td>
+    <td align="right">4</td>
+    </tr>
+    <tr>
+    <td align="right">30</td>
+    <td>Quivira Sauvignon Blanc Dry Creek Valley Alder Grove Vineyard-</td>
+    <td>A complex note of dried honeysuckle and a whiff of smoke add intrigue and depth to the core of succulent peach, melon and mango flavors, set on a medium body, with a fresh frame. Shows wonderful purity of fruit and nuances that linger effortlessly. Drink now. 1,370 cases made. —MW</td>
+    <td>2017</td>
+    <td>$24 </td>
+    <td align="right">93.0</td>
+    <td align="right">4</td>
+    </tr>
+    <tr>
+    <td align="right">31</td>
+    <td>Torbreck Shiraz Barossa Valley Woodcutter&#39;s-</td>
+    <td>Aromatic and stylish, opening with violet, white pepper and subtle sweet cream notes. The core gushes with huckleberry and wild blueberry flavors, revealing shades of rosemary and apricot. Supple and smooth, with tannins hanging in the background, providing appealing traction. The finish sails on and on. Drink now through 2035. 7,000 cases made, 3,500 cases imported. —MW</td>
+    <td>2017</td>
+    <td>$25 </td>
+    <td align="right">93.0</td>
+    <td align="right">3</td>
+    </tr>
+    <tr>
+    <td align="right">32</td>
+    <td>Castello di Gabbiano Chianti Classico-</td>
+    <td>An elegant style, offering black cherry, blackberry, iron and earth flavors, with a hint of wild herbs. The vibrant structure keeps this focused and drives the lingering finish. Drink now through 2033. 61,000 cases made, 40,000 cases imported. —BS</td>
+    <td>2015</td>
+    <td>$14 </td>
+    <td align="right">92.0</td>
+    <td align="right">3</td>
+    </tr>
+    <tr>
+    <td align="right">33</td>
+    <td>Godelia Mencía Bierzo-</td>
+    <td>Black cherry, plum and currant flavors give this red a rich core of fruit, while leafy, licorice and mineral notes add complexity. Well-integrated tannins and gentle acidity focus the plush texture. Harmonious, showing good depth. Drink now through 2025. 5,000 cases made, 600 cases imported. —TM</td>
+    <td>2015</td>
+    <td>$23 </td>
+    <td align="right">93.0</td>
+    <td align="right">3</td>
+    </tr>
+    <tr>
+    <td align="right">34</td>
+    <td>Beaux Frères Pinot Noir Ribbon Ridge The Upper Terrace-</td>
+    <td>Seduces you immediately, with expressive violet and dark raspberry aromas that open to polished and brilliantly structured blueberry, savory anise and tea flavors that take on richness on a long finish. Drink now through 2026. 1,850 cases made. —TF</td>
+    <td>2017</td>
+    <td>$110 </td>
+    <td align="right">96.0</td>
+    <td align="right">4</td>
+    </tr>
+    <tr>
+    <td align="right">35</td>
+    <td>Nervi Conterno Gattinara-</td>
+    <td>Haunting aromas of rose, wild cherry, kirsch, mineral and leather are the hallmarks of this silky, elegant red, which is linear and balanced, extending on the finish with notes of fruit, spice, mineral and tobacco. Very harmonious. Drink now through 2033. 5,000 cases made. —BS</td>
+    <td>2015</td>
+    <td>$56 </td>
+    <td align="right">94.0</td>
+    <td align="right">3</td>
+    </tr>
+    <tr>
+    <td align="right">36</td>
+    <td>La Jota Merlot Howell Mountain-</td>
+    <td>An elegant style, featuring lilting flavors of red currant and dried raspberry that show hints of cedar and paprika. Fine-edged, with savory richness midpalate. Dried green herbal notes emerge on the minerally finish. Drink now through 2026. 1,657 cases made. —KM</td>
+    <td>2016</td>
+    <td>$85 </td>
+    <td align="right">95.0</td>
+    <td align="right">3</td>
+    </tr>
+    <tr>
+    <td align="right">37</td>
+    <td>Bernhard Ott Niederösterreich Am Berg-</td>
+    <td>Lovely aromas of lily, rose, vanilla and coconut accent the peach and pineapple flavors in this white. A firm structure and dense texture make this complete. Multidimensional, with enough acidity for balance, and the body helps out. Persistent saline finish. Grüner Veltliner. Drink now through 2027. 1,320 cases imported. —AZ</td>
+    <td>2017</td>
+    <td>$21 </td>
+    <td align="right">92.0</td>
+    <td align="right">3</td>
+    </tr>
+    <tr>
+    <td align="right">38</td>
+    <td>Ca&#39; del Baio Barbaresco Autinbej-</td>
+    <td>A briny mineral note in the aroma signals this high-tension red. There is ample fruit and flesh on the palate, with cherry, strawberry, stone and white pepper flavors. Tightens up again on the finish. Best from 2021 through 2038. 1,830 cases made, 1,200 cases imported. —BS</td>
+    <td>2015</td>
+    <td>$28 </td>
+    <td align="right">93.0</td>
+    <td align="right">3</td>
+    </tr>
+    <tr>
+    <td align="right">39</td>
+    <td>Bodegas Marqués de Murrieta Rioja Finca Ygay Reserva-</td>
+    <td>Cedar, tobacco, dried cherry and spice flavors mingle in this red. Features a polished texture, with well-integrated tannins and orange peel acidity. Supple, harmonious and graceful. Tempranillo, Graciano, Mazuelo and Garnacha. Drink now through 2025. 100,000 cases made, 9,067 cases imported. —TM</td>
+    <td>2015</td>
+    <td>$29 </td>
+    <td align="right">92.0</td>
+    <td align="right">3</td>
+    </tr>
+    <tr>
+    <td align="right">40</td>
+    <td>Carol Shelton Coquille Blanc Paso Robles-</td>
+    <td>Fresh and spicy pear, lime and green apple flavors show details of matcha, peach blossom and honeysuckle in this white, which offers nice complexity and balance, with plenty of fresh acidity. Grenache Blanc, Roussanne, Viognier and Marsanne. Drink now through 2024. 1,203 cases made. —MW</td>
+    <td>2017</td>
+    <td>$24 </td>
+    <td align="right">93.0</td>
+    <td align="right">3</td>
+    </tr>
+    <tr>
+    <td align="right">41</td>
+    <td>Giant Steps Pinot Noir Yarra Valley-</td>
+    <td>Elegant and distinctive, offering fresh raspberry, sage and white pepper notes that are precise, supple and juicy, with a thread of fresh loam and forest floor, supported by polished tannins. A touch of matcha green tea lingers on the finish. Drink now through 2033. 350 cases imported. —MW</td>
+    <td>2018</td>
+    <td>$30 </td>
+    <td align="right">94.0</td>
+    <td align="right">3</td>
+    </tr>
+    <tr>
+    <td align="right">42</td>
+    <td>Roar Pinot Noir Santa Lucia Highlands Sierra Mar Vineyard-</td>
+    <td>Rich and plush, revealing a sinewy power to the dried cherry, macerated plum and red currant flavors. Luxuriantly spiced, with a long, creamy finish of cardamom, dried ginger and chocolate hints. Well-crafted and elegantly styled. Drink now through 2025. 686 cases made. —KM</td>
+    <td>2017</td>
+    <td>$58 </td>
+    <td align="right">94.0</td>
+    <td align="right">4</td>
+    </tr>
+    <tr>
+    <td align="right">43</td>
+    <td>Bernard Baudry Chinon-</td>
+    <td>A gorgeous red, with tobacco, bay leaf and black pepper notes underscoring the dark cherry and cola flavors. Beautifully integrated tannins join the fresh acidity and create a solid structure that gives this harmony and promises a long life ahead. Delicious now, but should be even better in a few years. Best from 2021 through 2030. 600 cases imported. —AZ</td>
+    <td>2017</td>
+    <td>$24 </td>
+    <td align="right">92.0</td>
+    <td align="right">4</td>
+    </tr>
+    <tr>
+    <td align="right">44</td>
+    <td>Mark Ryan The Dissident Columbia Valley-</td>
+    <td>Expressive and multilayered, with lively rose petal and black cherry aromas and sleekly complex flavors that take on richness toward polished tannins. Cabernet Sauvignon, Merlot, Cabernet Franc and Petit Verdot. Drink now through 2029. 3,900 cases made. —TF</td>
+    <td>2016</td>
+    <td>$38 </td>
+    <td align="right">93.0</td>
+    <td align="right">4</td>
+    </tr>
+    <tr>
+    <td align="right">45</td>
+    <td>Loveblock Pinot Noir Central Otago-</td>
+    <td>This displays an impressive presence, smooth and succulent, with vibrant cherry, raspberry and apricot notes and touches of white pepper, anise seed and toasted cumin. The texture is smooth, with firm tannins that add an appealing traction on the finish. Drink now through 2033. 4,500 cases made, 3,500 cases imported. —MW</td>
+    <td>2018</td>
+    <td>$35 </td>
+    <td align="right">93.0</td>
+    <td align="right">4</td>
+    </tr>
+    <tr>
+    <td align="right">46</td>
+    <td>Brick House Pinot Noir Ribbon Ridge Les Dijonnais-</td>
+    <td>Sleek and harmonious, with effortlessly complex violet, raspberry and river stone accents that take on richness toward a lingering finish. Drink now through 2025. 640 cases made. —TF</td>
+    <td>2016</td>
+    <td>$52 </td>
+    <td align="right">94.0</td>
+    <td align="right">4</td>
+    </tr>
+    <tr>
+    <td align="right">47</td>
+    <td>G.D. Vajra Barolo Albe-</td>
+    <td>Pretty, featuring rose, cherry, raspberry and mint flavors, with a touch of mineral. Supple, harmonious and elegant, offering a long finish. The aftertaste is tinged with orange peel and tobacco notes. Best from 2021 through 2036. 4,500 cases made. —BS</td>
+    <td>2015</td>
+    <td>$40 </td>
+    <td align="right">93.0</td>
+    <td align="right">3</td>
+    </tr>
+    <tr>
+    <td align="right">48</td>
+    <td>Wines of Substance Cabernet Sauvignon Washington Cs Substance-</td>
+    <td>Precise and vibrantly structured, with black cherry, espresso and spice flavors that take on richness toward polished tannins. Drink now through 2024. 162,605 cases made. —TF</td>
+    <td>2017</td>
+    <td>$17 </td>
+    <td align="right">91.0</td>
+    <td align="right">3</td>
+    </tr>
+    <tr>
+    <td align="right">49</td>
+    <td>Marchesi di Barolo Barbera del Monferrato Maraia-</td>
+    <td>A sleek, racy style, this red boasts raspberry, boysenberry, graphite and spice flavors. Balanced and focused, with lingering echoes of fruit, mineral and spice. Drink now through 2024. 10,000 cases made, 7,800 cases imported. —BS</td>
+    <td>2017</td>
+    <td>$13 </td>
+    <td align="right">91.0</td>
+    <td align="right">3</td>
+    </tr>
+    <tr>
+    <td align="right">50</td>
+    <td>P. Llopart Brut Rosé Cava Reserva-</td>
+    <td>The flavors of nectarine and white cherry are fresh and pure in this elegant sparkling rosé, with pretty accents of ground ginger, chalk and pink grapefruit sorbet riding the fine bead and lingering on the zesty finish. Drink now through 2022. 5,000 cases made, 1,000 cases imported. —AN</td>
+    <td>2016</td>
+    <td>$22 </td>
+    <td align="right">91.0</td>
+    <td align="right">3</td>
+    </tr>
+    <tr>
+    <td align="right">51</td>
+    <td>Aubert Pinot Noir Sonoma Coast UV-SL Vineyard-</td>
+    <td>Rich and expressive, featuring concentrated boysenberry, plum tart and dark cherry flavors that are flush with crunchy acidity. Minerally midpalate, with a long, plush finish that offers flinty and meaty overtones. Drink now through 2024. 791 cases made. —KM</td>
+    <td>2017</td>
+    <td>$85 </td>
+    <td align="right">95.0</td>
+    <td align="right">3</td>
+    </tr>
+    <tr>
+    <td align="right">52</td>
+    <td>Quinta do Noval Vintage Port-</td>
+    <td>This is well-packed, offering the vivid plum, boysenberry, cassis and açaí berry fruit profile of the vintage, along with a dark edge of tar, baker&#39;s chocolate and salted licorice that courses underneath. The long finish lets the fruit play out, keeping singed alder and chai spice hints in the background. Smolderingly seductive. Touriga Nacional, Touriga Franca, Tinta Cão, Sousão and Tinta Roriz. Best from 2035 through 2060. 3,500 cases made. —JM</td>
+    <td>2017</td>
+    <td>$125 </td>
+    <td align="right">98.0</td>
+    <td align="right">4</td>
+    </tr>
+    <tr>
+    <td align="right">53</td>
+    <td>Poliziano Vino Nobile di Montepulciano-</td>
+    <td>Bright black cherry, plum, earth, vanilla and toasty oak flavors are the hallmarks of this well-crafted red. Balanced, this needs a year or two to integrate more fully and extend the finish. Firm grip. Sangiovese, Colorino, Canaiolo and Merlot. Best from 2021 through 2033. 16,000 cases made, 2,600 cases imported. —BS</td>
+    <td>2016</td>
+    <td>$30 </td>
+    <td align="right">92.0</td>
+    <td align="right">3</td>
+    </tr>
+    <tr>
+    <td align="right">54</td>
+    <td>Failla Pinot Noir Russian River Valley Keefer Ranch-</td>
+    <td>Plush, featuring creamy notes that accent the concentrated cherry tart, dark plum and currant flavors, taking on a pastrylike richness. Sandalwood and spice details linger on the finish, with chocolate hints. Drink now through 2023. 1,179 cases made. —KM</td>
+    <td>2017</td>
+    <td>$52 </td>
+    <td align="right">93.0</td>
+    <td align="right">3</td>
+    </tr>
+    <tr>
+    <td align="right">55</td>
+    <td>Quinta do Vale Meão Douro-</td>
+    <td>Well-crafted, balancing power and finesse, this red layers raspberry gelée, cherry tart and olive tapenade flavors with cured meat, black tea and wild rosemary accents. Sinewy tannins mark the rich finish, infused with licorice, mocha and baking spice aromas. Touriga Nacional, Touriga Franca, Tinta Barroca and Tinta Roriz. Best from 2021 through 2030. 2,400 cases made, 240 cases imported. —GS</td>
+    <td>2016</td>
+    <td>$99 </td>
+    <td align="right">96.0</td>
+    <td align="right">4</td>
+    </tr>
+    <tr>
+    <td align="right">56</td>
+    <td>Alain Voge Cornas Les Vieilles Vignes-</td>
+    <td>This offers a mix of red and black cherry paste flavors, infused with a range of bay leaf, savory, tobacco, olive and chalk notes. Shows a grippy feel through the finish, with the chalky minerality driving through. Best from 2022 through 2038. 1,230 cases made, 220 cases imported. —JM</td>
+    <td>2016</td>
+    <td>$85 </td>
+    <td align="right">95.0</td>
+    <td align="right">3</td>
+    </tr>
+    <tr>
+    <td align="right">57</td>
+    <td>A to Z Wineworks Chardonnay Oregon-</td>
+    <td>Vibrant, with plush fruit, offering medium-weight lemon and quince flavors that take on expression and polish on the finish. Drink now through 2020. 38,270 cases made. —TF</td>
+    <td>2018</td>
+    <td>$15 </td>
+    <td align="right">90.0</td>
+    <td align="right">3</td>
+    </tr>
+    <tr>
+    <td align="right">58</td>
+    <td>Viña Montes Alpha M Colchagua Valley-</td>
+    <td>Rich, robust and lusciously spiced, with concentrated dark cherry, plum and boysenberry flavors supported by fresh acidity. Intense midpalate minerality is followed by a finish loaded with chocolate and cream notes. Cabernet Sauvignon, Cabernet Franc and Petit Verdot. Drink now through 2024. 4,500 cases made, 500 cases imported. —KM</td>
+    <td>2015</td>
+    <td>$100 </td>
+    <td align="right">95.0</td>
+    <td align="right">4</td>
+    </tr>
+    <tr>
+    <td align="right">59</td>
+    <td>Mt. Beautiful Sauvignon Blanc North Canterbury-</td>
+    <td>Offers an appealing core of intense, lush flavors of ripe melon and peach, with details of white pepper, honeysuckle and ruby grapefruit lingering on the finish. Impressive for the intensity and focus. Drink now. 14,800 cases made, 10,000 cases imported. —MW</td>
+    <td>2018</td>
+    <td>$17 </td>
+    <td align="right">90.0</td>
+    <td align="right">3</td>
+    </tr>
+    <tr>
+    <td align="right">60</td>
+    <td>Cambria Chardonnay Santa Maria Valley Katherine&#39;s Vineyard-</td>
+    <td>Well-structured, with a smoky richness to the mineral-infused apple and pear tart flavors. The fresh, spicy finish lingers with a creamy texture. Drink now through 2022. 40,000 cases made. —KM</td>
+    <td>2017</td>
+    <td>$22 </td>
+    <td align="right">91.0</td>
+    <td align="right">3</td>
+    </tr>
+    <tr>
+    <td align="right">61</td>
+    <td>Viña Haras de Pirque Cabernet Sauvignon Maipo Valley Hussonet Gran Reserva-</td>
+    <td>Big and fresh-tasting, with concentrated dark plum, dark currant and black olive flavors. Asian spice and dark chocolate notes on the muscular finish. Drink now through 2024. 2,500 cases imported. —KM</td>
+    <td>2015</td>
+    <td>$15 </td>
+    <td align="right">90.0</td>
+    <td align="right">3</td>
+    </tr>
+    <tr>
+    <td align="right">62</td>
+    <td>Michel Gassier Costières de Nîmes White Nostre Païs-</td>
+    <td>Fresh, featuring pear, yellow apple, melon and jasmine notes streaming through together, with a flash of lemon shortbread on the enticing finish. Grenache Blanc, Roussanne, Clairette, Viognier and Bourboulenc. Drink now. 3,000 cases made, 1,200 cases imported. —JM</td>
+    <td>2017</td>
+    <td>$22 </td>
+    <td align="right">91.0</td>
+    <td align="right">3</td>
+    </tr>
+    <tr>
+    <td align="right">63</td>
+    <td>Dry Creek Zinfandel Sonoma County Heritage Vines-</td>
+    <td>Briary and vibrant, with zesty raspberry, toasted sage and cracked pepper flavors that take on richness toward polished tannins. Drink now through 2025. 15,000 cases made. —TF</td>
+    <td>2017</td>
+    <td>$26 </td>
+    <td align="right">91.0</td>
+    <td align="right">3</td>
+    </tr>
+    <tr>
+    <td align="right">64</td>
+    <td>Tania &amp; Vincent Carême Terre Brûlée Le Blanc Swartland-</td>
+    <td>Elegant, showing a gentle texture, with intense acidity giving energy to the flavors of yellow apple, lime and honeysuckle. Salty mineral elements emerge midpalate, leaving a savory aftertaste. Best from 2021 through 2028. 2,200 cases imported. —AZ</td>
+    <td>2018</td>
+    <td>$16 </td>
+    <td align="right">90.0</td>
+    <td align="right">3</td>
+    </tr>
+    <tr>
+    <td align="right">65</td>
+    <td>RouteStock Pinot Noir Sonoma Coast 116-</td>
+    <td>This offers creamy raspberry, currant and wild plum flavors, supported by medium-grained tannins. The spicy finish lingers with chocolate notes and hints of mint. Drink now through 2023. 5,024 cases made. —KM</td>
+    <td>2017</td>
+    <td>$23 </td>
+    <td align="right">91.0</td>
+    <td align="right">3</td>
+    </tr>
+    <tr>
+    <td align="right">66</td>
+    <td>Marquis d&#39;Angerville Volnay Champans-</td>
+    <td>Pure and intense, featuring cherry, black currant and violet aromas and flavors, this red is seductive and approachable despite its youth. The solid structure is seamlessly integrated and bodes well for future development. Shows terrific harmony and expression. Best from 2023 through 2042. 145 cases imported. —BS</td>
+    <td>2016</td>
+    <td>$150 </td>
+    <td align="right">95.0</td>
+    <td align="right">4</td>
+    </tr>
+    <tr>
+    <td align="right">67</td>
+    <td>Mirabella Brut Rosé Franciacorta-</td>
+    <td>An expressive rosé, with mouthwatering acidity and a satiny mousse, this offers flavors of ripe nectarine, candied ginger, pomegranate and star anise, underscored by chalky mineral notes. Drink now through 2024. 6,000 cases made, 600 cases imported. —AN</td>
+    <td>NV</td>
+    <td>$29 </td>
+    <td align="right">92.0</td>
+    <td align="right">3</td>
+    </tr>
+    <tr>
+    <td align="right">68</td>
+    <td>Farella Cabernet Sauvignon Coombsville-</td>
+    <td>Dark and winey, with steeped black currant, fig and blackberry fruit flavors, inlaid liberally with smoldering charcoal and sweet tobacco notes. Anise and tar details score the finish, adding length and range to the depth and energy. Best from 2021 through 2035. Tasted twice, with consistent notes. 257 cases made. —JM</td>
+    <td>2015</td>
+    <td>$65 </td>
+    <td align="right">94.0</td>
+    <td align="right">3</td>
+    </tr>
+    <tr>
+    <td align="right">69</td>
+    <td>Forstreiter Grüner Veltliner Kremstal Kremser Kogl-</td>
+    <td>Mineral-driven and well-built, this is bursting with notes of iodine, lentil and white pepper, while nectarine and pear flavors take a back seat. Very energetic, with enough structure to stand up to a serious meal. Drink now through 2026. 2,000 cases made, 1,200 cases imported. —AZ</td>
+    <td>2018</td>
+    <td>$17 </td>
+    <td align="right">90.0</td>
+    <td align="right">3</td>
+    </tr>
+    <tr>
+    <td align="right">70</td>
+    <td>Pierre Luneau-Papin Muscadet de Sèvre et Maine Sur Lie Clos des Allées-</td>
+    <td>Very pure, showing a bit of richness, with a silky texture and notes of lemon verbena, lime zest, chamomile and fleur de sel that persist on the long, savory and dry finish. Drink now through 2026. 600 cases imported. —AZ</td>
+    <td>2018</td>
+    <td>$21 </td>
+    <td align="right">91.0</td>
+    <td align="right">4</td>
+    </tr>
+    <tr>
+    <td align="right">71</td>
+    <td>Marotti Campi Verdicchio dei Castelli di Jesi Classico Superiore Luzano-</td>
+    <td>Light herb and citrus zest notes accent the apricot, wet stone, almond blossom and pear flavors in sleek and silky, light- to medium-bodied white. Fresh and lingering, with a minerally finish. Drink now through 2024. 1,500 cases imported. —AN</td>
+    <td>2017</td>
+    <td>$17 </td>
+    <td align="right">90.0</td>
+    <td align="right">3</td>
+    </tr>
+    <tr>
+    <td align="right">72</td>
+    <td>Cristom Pinot Noir Willamette Valley Mt. Jefferson Cuvée-</td>
+    <td>Expressive strawberry blossom and raspberry aromas open to elegantly structured cherry and spicy cinnamon flavors that build richness toward refined tannins. Drink now through 2025. 9,835 cases made. —TF</td>
+    <td>2017</td>
+    <td>$35 </td>
+    <td align="right">92.0</td>
+    <td align="right">3</td>
+    </tr>
+    <tr>
+    <td align="right">73</td>
+    <td>Corazon del Sol Malbec Los Chacayes Gran Reserva Revana Vineyard-</td>
+    <td>Elegant and powerful, featuring concentrated kirsch, blueberry and dark cherry flavors that are supported by fresh acidity and zesty tannins. Shows intense minerality midpalate, with a long and generously spiced finish, filled with accents of flint and clove. Complex. Drink now through 2025. 200 cases made, 150 cases imported. —KM</td>
+    <td>2016</td>
+    <td>$75 </td>
+    <td align="right">94.0</td>
+    <td align="right">4</td>
+    </tr>
+    <tr>
+    <td align="right">74</td>
+    <td>Jean Perrier &amp; Fils Savoie Apremont Cuvée Gastronomie-</td>
+    <td>Features an alluring brioche hint around a core of lemon curd, white peach and yellow apple flavors, with light fennel and salted butter hints weaving through the finish. Drink now through 2020. 11,000 cases made, 1,000 cases imported. —JM</td>
+    <td>2018</td>
+    <td>$17 </td>
+    <td align="right">90.0</td>
+    <td align="right">3</td>
+    </tr>
+    <tr>
+    <td align="right">75</td>
+    <td>Penner-Ash Pinot Noir Yamhill-Carlton District Shea Vineyard-</td>
+    <td>Elegant yet dynamic, with violet, raspberry and spiced cinnamon flavors that build richness and structure toward refined tannins. Drink now through 2026. 1,100 cases made. —TF</td>
+    <td>2016</td>
+    <td>$72 </td>
+    <td align="right">94.0</td>
+    <td align="right">3</td>
+    </tr>
+    <tr>
+    <td align="right">76</td>
+    <td>Vincenzo Ippolito Cirò White Mare Chiaro-</td>
+    <td>An aromatic, light-bodied white, with lip-smacking acidity and a subtly chalky texture, this offers flavors of melon, jasmine and pink grapefruit pith. Minerally finish. Drink now through 2022. 9,000 cases made, 2,000 cases imported. —AN</td>
+    <td>2018</td>
+    <td>$19 </td>
+    <td align="right">90.0</td>
+    <td align="right">3</td>
+    </tr>
+    <tr>
+    <td align="right">77</td>
+    <td>Gérard Bertrand Languedoc Art de Vivre-</td>
+    <td>Polished, supple tannins support the black cherry, red plum and wild raspberry notes of this juicy red, with savory touches of mineral and herb on the clean finish. Grenache, Syrah and Mourvèdre. Drink now through 2022. 35,000 cases made, 10,000 cases imported. —GS</td>
+    <td>2015</td>
+    <td>$20 </td>
+    <td align="right">90.0</td>
+    <td align="right">3</td>
+    </tr>
+    <tr>
+    <td align="right">78</td>
+    <td>Macdonald Cabernet Sauvignon Oakville-</td>
+    <td>Very concentrated, this moves slowly but with authority, as the core of cassis and mulled plum fruit is laced with plum pit, stony mineral, light savory, alder and incense notes. Youthfully tight, but with a long echo of sweet fruit that plays out while serious cut and loamy grip hold a rock-steady rhythm. Should cruise in the cellar. Best from 2021 through 2042. 369 cases made. —JM</td>
+    <td>2016</td>
+    <td>$175 </td>
+    <td align="right">96.0</td>
+    <td align="right">4</td>
+    </tr>
+    <tr>
+    <td align="right">79</td>
+    <td>Casa Vinicola Triacca Valtellina Superiore Sassella-</td>
+    <td>An elegant red, with sleek tannins trimming a fresh range of macerated raspberry, sandalwood, lavender and iron flavors. Well-knit, featuring a creamy, lingering finish that echoes mineral and citrus peel notes. Drink now through 2029. 2,000 cases made, 300 cases imported. —AN</td>
+    <td>2016</td>
+    <td>$18 </td>
+    <td align="right">91.0</td>
+    <td align="right">3</td>
+    </tr>
+    <tr>
+    <td align="right">80</td>
+    <td>Veuve Ambal Brut Crémant de Bourgogne Grande Cuvée-</td>
+    <td>A toasty version, laced with vanilla, pastry cream and spice notes, this is enlivened by racy acidity that creates a mouthwatering frame for the poached quince, apricot and candied ginger flavors. Drink now through 2022. 100,000 cases made, 5,000 cases imported. —AN</td>
+    <td>NV</td>
+    <td>$20 </td>
+    <td align="right">90.0</td>
+    <td align="right">3</td>
+    </tr>
+    <tr>
+    <td align="right">81</td>
+    <td>Friedrich Becker Pinot Blanc Pfalz Becker Family-</td>
+    <td>A harmonious white, lush and creamy in texture, with acidity imparting freshness and focus. Offers a pleasing mix of Bosc pear, pickled ginger, apple blossom and stony mineral notes. Spicy finish. Drink now through 2025. 600 cases imported. —AZ</td>
+    <td>2017</td>
+    <td>$18 </td>
+    <td align="right">90.0</td>
+    <td align="right">3</td>
+    </tr>
+    <tr>
+    <td align="right">82</td>
+    <td>Planeta Cerasuolo di Vittoria-</td>
+    <td>This medium-bodied red is balanced and fresh, with light, taut tannins and a well-knit mix of wild strawberry and raspberry, dried thyme, singed orange peel and spicy mineral flavors. Drink now through 2023. 8,000 cases made, 4,000 cases imported. —AN</td>
+    <td>2017</td>
+    <td>$24 </td>
+    <td align="right">90.0</td>
+    <td align="right">3</td>
+    </tr>
+    <tr>
+    <td align="right">83</td>
+    <td>Domaine Faiveley Nuits-St.-Georges-</td>
+    <td>A touch of gaminess in the aroma gives way to blackberry, black cherry, earth and iron flavors in this rich, solidly structured red. Vibrant and balanced, though this needs a little time to integrate. Terrific length. Best from 2023 through 2042. 1,083 cases made, 150 cases imported. —BS</td>
+    <td>2016</td>
+    <td>$68 </td>
+    <td align="right">94.0</td>
+    <td align="right">4</td>
+    </tr>
+    <tr>
+    <td align="right">84</td>
+    <td>San Martino Aglianico del Vulture Arberesko-</td>
+    <td>A fresh and elegant red, medium- to full-bodied, featuring supple tannins finely meshed with flavors of crushed black cherry fruit and a core of smoke-tinged mineral, with delicate tea leaf and star anise accents. Long and racy on the finish. Drink now through 2029. 1,000 cases made, 200 cases imported. —AN</td>
+    <td>2015</td>
+    <td>$24 </td>
+    <td align="right">92.0</td>
+    <td align="right">4</td>
+    </tr>
+    <tr>
+    <td align="right">85</td>
+    <td>Bieler Père &amp; Fils Bandol Rosé Réserve-</td>
+    <td>Supple white raspberry and tangerine notes are supported by steely acidity, with heather, wild herb and mineral notes carrying through the spicy, savory-driven finish. Drink now. 1,200 cases made, 1,200 cases imported. —GS</td>
+    <td>2018</td>
+    <td>$22 </td>
+    <td align="right">90.0</td>
+    <td align="right">3</td>
+    </tr>
+    <tr>
+    <td align="right">86</td>
+    <td>Cantina Terlano Pinot Grigio Alto Adige Tradition-</td>
+    <td>A creamy, light-bodied white, with mouthwatering acidity driving a finely knit range of Honeycrisp apple, Marcona almond and orchard blossom flavors, showing a rich and tangy streak of salinity that lingers on the finish. Drink now through 2023. 9,167 cases made, 8,000 cases imported. —AN</td>
+    <td>2018</td>
+    <td>$25 </td>
+    <td align="right">90.0</td>
+    <td align="right">3</td>
+    </tr>
+    <tr>
+    <td align="right">87</td>
+    <td>Bodega Burdigala Rueda Campo Elíseo Cuvée Alegre-</td>
+    <td>This rich white shows lively flavors of pineapple and quince, backed by tangerine acidity and deepened by notes of vanilla and spice. A fruit-centered style that remains bright and balanced. Drink now. 3,750 cases produced, 200 cases imported. —TM</td>
+    <td>2018</td>
+    <td>$15 </td>
+    <td align="right">90.0</td>
+    <td align="right">3</td>
+    </tr>
+    <tr>
+    <td align="right">88</td>
+    <td>Rotem &amp; Mounir Saouma Châteauneuf-du-Pape Omnia-</td>
+    <td>Sublime, with a beguiling mouthfeel to the layers of cherry puree, steeped plum and warmed raspberry coulis fruit flavors, melded with rooibos tea, bergamot, incense and jasmine notes. The long finish features subtle minerality and remarkable persistence, seeming to move with grace. Grenache, Syrah and Mourvèdre. Best from 2021 through 2045. 125 cases imported. —JM</td>
+    <td>2016</td>
+    <td>$107 </td>
+    <td align="right">97.0</td>
+    <td align="right">4</td>
+    </tr>
+    <tr>
+    <td align="right">89</td>
+    <td>Hans Wirsching Riesling Franken Iphöfer Kronsberg Alte Reben-</td>
+    <td>Clean and airy, with good cut to the apple, green peach and gooseberry flavors, featuring notes of dried mint. The spicy finish lingers, revealing accents of savory mineral and white pepper. Best from 2020 through 2027. 1,000 cases made, 650 cases imported. —AZ</td>
+    <td>2017</td>
+    <td>$19 </td>
+    <td align="right">90.0</td>
+    <td align="right">3</td>
+    </tr>
+    <tr>
+    <td align="right">90</td>
+    <td>Snowden Cabernet Sauvignon Napa Valley Brothers Vineyard-</td>
+    <td>Offers a tasty core of plum and blackberry fruit, backed by lively anise and apple wood notes. Restrained overall, with an alluring freshness and a subtle charcoal hint lingering deftly at the end. Drink now through 2032. 639 cases made. —JM</td>
+    <td>2016</td>
+    <td>$90 </td>
+    <td align="right">94.0</td>
+    <td align="right">3</td>
+    </tr>
+    <tr>
+    <td align="right">91</td>
+    <td>Rafael Palacios Godello Valdeorras Louro-</td>
+    <td>Peach, quince and lime flavors mingle with notes of lemon cream, heather and grapefruit in this expressive white. The texture is broad, but crisp acidity keeps this focused. Drink now. 1,098 cases imported. —TM</td>
+    <td>2017</td>
+    <td>$24 </td>
+    <td align="right">90.0</td>
+    <td align="right">3</td>
+    </tr>
+    <tr>
+    <td align="right">92</td>
+    <td>Georges Vigouroux Malbec Cahors Château de Mercuès-</td>
+    <td>A minerally undertone gives depth to the raspberry reduction and red plum compote flavors of this concentrated, focused red, with infusions of floral, tea and herb on the plush finish. Drink now through 2024. 8,500 cases made, 1,500 cases imported. —GS</td>
+    <td>2016</td>
+    <td>$25 </td>
+    <td align="right">90.0</td>
+    <td align="right">3</td>
+    </tr>
+    <tr>
+    <td align="right">93</td>
+    <td>Favia Cabernet Sauvignon Coombsville-</td>
+    <td>Ripe and vivid, with a stream of boysenberry, black currant and plum fruit racing along in lockstep, while anise, sage and singed tobacco notes fill in. The finish is underscored by graphite-edged grip, showing good latent energy. Powerful and pure. Best from 2021 through 2035. 342 cases made. —JM</td>
+    <td>2016</td>
+    <td>$175 </td>
+    <td align="right">95.0</td>
+    <td align="right">4</td>
+    </tr>
+    <tr>
+    <td align="right">94</td>
+    <td>Piper-Heidsieck Brut Champagne Cuvée-</td>
+    <td>Lithe and vibrant, this graceful Champagne is driven by well-knit, racy acidity, carrying flavors of ripe black cherry, grated ginger, toast point and mineral on the satiny mousse. Drink now through 2022. 222,500 cases made, 29,000 cases imported. —AN</td>
+    <td>NV</td>
+    <td>$47 </td>
+    <td align="right">92.0</td>
+    <td align="right">3</td>
+    </tr>
+    <tr>
+    <td align="right">95</td>
+    <td>Benanti Etna-</td>
+    <td>A medium-bodied red, with a crisp tannic frame, this offers bright raspberry and strawberry fruit, revealing an underlay of fresh earth, spice and dried herb notes. Bright and elegant. Drink now through 2024. 6,250 cases made, 4,000 cases imported. —AN</td>
+    <td>2017</td>
+    <td>$28 </td>
+    <td align="right">90.0</td>
+    <td align="right">3</td>
+    </tr>
+    <tr>
+    <td align="right">96</td>
+    <td>Château Pichon Longueville Lalande Pauillac-</td>
+    <td>Saturated with dark currant, fig and blackberry compote flavors, this has a fleshy, nearly glycerin feel at first before stretching out to reveal singed cedar, tobacco leaf, dark earth and cassis bush flavors. A terrific tug of cast iron emerges at the very end. Deliciously juicy dark fruit keeps rolling throughout. Best from 2025 through 2040. 12,000 cases made. —JM</td>
+    <td>2016</td>
+    <td>$197 </td>
+    <td align="right">97.0</td>
+    <td align="right">3</td>
+    </tr>
+    <tr>
+    <td align="right">97</td>
+    <td>Wine &amp; Soul Douro Manoella-</td>
+    <td>Zesty currant and boysenberry notes are tangy and inviting in this spicy, medium-bodied red, with moderate tannins supporting the herb, tea and mineral details on the finish. Touriga Nacional, Touriga Franca, Tinta Roriz and Touriga Francesa. Drink now through 2023. 2,000 cases made, 250 cases imported. —GS</td>
+    <td>2016</td>
+    <td>$22 </td>
+    <td align="right">90.0</td>
+    <td align="right">3</td>
+    </tr>
+    <tr>
+    <td align="right">98</td>
+    <td>Domaines Dominique Piron Morgon Côte du Py-</td>
+    <td>A vivid minerally undertone marks the pure raspberry and ripe cherry flavors, accented by licorice and floral details that give way to white pepper and wild herb elements on the long, lightly tannic finish. Drink now through 2024. 3,000 cases made, 200 cases imported. —GS</td>
+    <td>2017</td>
+    <td>$28 </td>
+    <td align="right">92.0</td>
+    <td align="right">4</td>
+    </tr>
+    <tr>
+    <td align="right">99</td>
+    <td>Domaine du Castel Grand Vin Haute-Judée-</td>
+    <td>Ripe currant, blackberry and plum flavors are nicely displayed with mocha, baking spice and cedar details in this sinewy, focused red. Hints of olive and graphite mark the tannic finish. Drink now through 2025. 3,900 cases made, 1,280 cases imported. —GS</td>
+    <td>2016</td>
+    <td>$85 </td>
+    <td align="right">91.0</td>
+    <td align="right">3</td>
+    </tr>
+    </tbody></table>
+    </div>
+    <div class="tab-pane fade" id="profile-just" role="tabpanel" aria-labelledby="profile-tab-just">
+    <table id="dtVerticalScrollExample2" class="table table-striped table-bordered table-sm" cellspacing="0"
+  width="100%">
+    <thead><tr><th title="Field #1"></th>
+    <th title="Field #2">Wine</th>
+    <th title="Field #3">Description</th>
+    <th title="Field #4">Vintage</th>
+    <th title="Field #5">Price</th>
+    <th title="Field #6">Score</th>
+    <th title="Field #7">Model Rating</th>
+    </tr></thead>
+    <tbody><tr>
+    <td align="right">0</td>
+    <td>Tenuta San Guido Bolgheri-Sassicaia Sassicaia-</td>
+    <td>Rich and concentrated, this red features black currant, blackberry, violet, mineral and spice flavors. Dense yet lively, structured yet impeccably balanced, with vibrant acidity driving the long, fruit-filled aftertaste. The oak is beautifully integrated. Cabernet Sauvignon and Cabernet Franc. Best from 2023 through 2042. 17,200 cases made. —BS</td>
+    <td>2015</td>
+    <td>$245 </td>
+    <td align="right">97.0</td>
+    <td align="right">4</td>
+    </tr>
+    <tr>
+    <td align="right">1</td>
+    <td>Château Canon-La Gaffelière St.-Emilion-</td>
+    <td>Still youthfully tight and backward, with a well-roasted frame of alder and juniper holding sway for now, but the core of cassis, blackberry and plum fruit waits in reserve, showing prodigious depth. When the toast and fruit melds, the backdrop of tobacco, singed iron and chalky minerality will get a turn to show. There&#39;s a lot here. Built for the cellar. Merlot, Cabernet Franc and Cabernet Sauvignon. Best from 2025 through 2040. 6,250 cases made. —JM</td>
+    <td>2015</td>
+    <td>$84 </td>
+    <td align="right">96.0</td>
+    <td align="right">4</td>
+    </tr>
+    <tr>
+    <td align="right">2</td>
+    <td>Castello di Volpaia Chianti Classico Riserva-</td>
+    <td>Though saturated with black currant and blackberry fruit and backed by opaque tannins, this red is pure and balanced. Thyme, iron, leather and tar notes give this complexity, while the finish goes into overtime. Best from 2023 through 2040. 2,500 cases imported. —BS</td>
+    <td>2015</td>
+    <td>$35 </td>
+    <td align="right">96.0</td>
+    <td align="right">3</td>
+    </tr>
+    <tr>
+    <td align="right">3</td>
+    <td>La Rioja Alta Rioja 890 Gran Reserva Selección Especial-</td>
+    <td>Cedar and sandalwood aromas give way to flavors of tea, tobacco, dried cherry, forest floor and orange peel in this expressive red. Round on the palate, supported by muscular tannins and juicy acidity. Big but graceful, mature yet lively, in the traditional style. Drink now through 2030. 4,753 cases made. —TM</td>
+    <td>2005</td>
+    <td>$175 </td>
+    <td align="right">95.0</td>
+    <td align="right">3</td>
+    </tr>
+    <tr>
+    <td align="right">4</td>
+    <td>Moët &amp; Chandon Brut Champagne Dom Pérignon Legacy Edition-</td>
+    <td>There&#39;s power to this graceful Champagne, with the vivid acidity swathed in a fine, creamy mousse and flavors of toasted brioche, kumquat, pastry cream, candied ginger and poached plum that dance across the palate. An underpinning of smoky mineral gains momentum on the lasting finish. Drink now through 2033. —AN</td>
+    <td>2008</td>
+    <td>$180 </td>
+    <td align="right">96.0</td>
+    <td align="right">3</td>
+    </tr>
+    <tr>
+    <td align="right">5</td>
+    <td>Aubert Chardonnay Carneros Larry Hyde &amp; Sons-</td>
+    <td>Voluptuous and creamy, with densely packed flavors of apple pastry, pear tart and peach and hints of mango that are long and rich. The plush, complex finish is filled with notes of spice and dried herbs. Drink now through 2026. 960 cases made. —KM</td>
+    <td>2016</td>
+    <td>$85 </td>
+    <td align="right">96.0</td>
+    <td align="right">4</td>
+    </tr>
+    <tr>
+    <td align="right">6</td>
+    <td>Colene Clemens Pinot Noir Chehalem Mountains Dopp Creek-</td>
+    <td>Impressive for the polished texture and elegant complexity, offering vibrant raspberry, orange peel and spice flavors that gain momentum toward refined tannins. Drink now through 2023. 3,023 cases made. —TF</td>
+    <td>2015</td>
+    <td>$26 </td>
+    <td align="right">95.0</td>
+    <td align="right">4</td>
+    </tr>
+    <tr>
+    <td align="right">7</td>
+    <td>Le Vieux Donjon Châteauneuf-du-Pape-</td>
+    <td>This offers a blitz of bay leaf and juniper notes out front, followed by a racy and tightly coiled core of red and black currant, damson plum and cherry fruit flavors. Lots of brisk iron and garrigue accents rifle through the finish. Clear, precise and streamlined, this should age wonderfully. Best from 2020 through 2040. 7,000 cases made. —JM</td>
+    <td>2016</td>
+    <td>$70 </td>
+    <td align="right">95.0</td>
+    <td align="right">4</td>
+    </tr>
+    <tr>
+    <td align="right">8</td>
+    <td>Tenuta delle Terre Nere Etna San Lorenzo-</td>
+    <td>Ripe black cherry and raspberry fruit meets tarry mineral and accents of licorice, spiced orange peel and herb in this chewy, medium-bodied red. The bold flavor and structure are deftly knit into a graceful and harmonious package, with the spice and mineral character lingering on the finish. Best from 2020 through 2030. 750 cases made. —AN</td>
+    <td>2016</td>
+    <td>$60 </td>
+    <td align="right">95.0</td>
+    <td align="right">3</td>
+    </tr>
+    <tr>
+    <td align="right">9</td>
+    <td>Bedrock The Bedrock Heritage Sonoma Valley-</td>
+    <td>A knockout red, focused and well-built but loaded with personality, with expressive blackberry and dark Asian spice notes leading to intense yet refined smoky plum, orange zest and cracked pepper flavors. Zinfandel, Carignane, Mataro, Syrah and Alicante Bouschet. Drink now through 2027. 600 cases made. —TF</td>
+    <td>2016</td>
+    <td>$46 </td>
+    <td align="right">95.0</td>
+    <td align="right">4</td>
+    </tr>
+    <tr>
+    <td align="right">10</td>
+    <td>Carpineto Vino Nobile di Montepulciano Riserva-</td>
+    <td>The stunning bouquet of ripe black cherry, black currant, leather and woodsy spice notes is enticing, while the sweet fruit is a match for the dense structure. The lengthy finish lingers, with tobacco, eucalyptus and iron accents. Drink now through 2030. 12,200 cases made. —BS</td>
+    <td>2013</td>
+    <td>$30 </td>
+    <td align="right">95.0</td>
+    <td align="right">4</td>
+    </tr>
+    <tr>
+    <td align="right">11</td>
+    <td>Felton Road Pinot Noir Central Otago Bannockburn-</td>
+    <td>Elegant, fresh and vibrant, this red starts off wonderfully perfumed, with lavender, white pepper and green tea notes that accentuate the purity of the cherry and raspberry flavors. Polished tannins still provide some grip on the finish, where white truffle and forest floor details linger. Drink now through 2032. 7,120 cases made. —MW</td>
+    <td>2017</td>
+    <td>$50 </td>
+    <td align="right">96.0</td>
+    <td align="right">3</td>
+    </tr>
+    <tr>
+    <td align="right">12</td>
+    <td>Produttori del Barbaresco Barbaresco Rabajà Riserva-</td>
+    <td>This fruity version features floral, cherry and plum flavors, along with savory leather, licorice and tobacco notes. A chewy texture and lively acidity keep this well-defined through the long finish. Complex and classy. Best from 2023 through 2038. 1,420 cases made. —BS</td>
+    <td>2013</td>
+    <td>$66 </td>
+    <td align="right">96.0</td>
+    <td align="right">3</td>
+    </tr>
+    <tr>
+    <td align="right">13</td>
+    <td>Warre Vintage Port-</td>
+    <td>Gorgeous, with warm plum reduction and gently steeped raspberry, blackberry and boysenberry fruit flavors forming the core, all inlaid with warm ganache and smoldering tobacco accents. Very plush in feel, but has no lack of energy, as everything sails beautifully through the long finish. A late echo of anise completes the seduction. Best from 2035 through 2055. 3,000 cases made. —JM</td>
+    <td>2016</td>
+    <td>$98 </td>
+    <td align="right">98.0</td>
+    <td align="right">4</td>
+    </tr>
+    <tr>
+    <td align="right">14</td>
+    <td>Canalicchio di Sopra Brunello di Montalcino-</td>
+    <td>Plump and bursting with cherry, strawberry and mineral aromas and flavors, this racy red evokes harmony and freshness, with hints of spice, chocolate and tobacco as it plays out gracefully on the long aftertaste. There&#39;s structure here, with all the components integrated. Best from 2020 through 2035. 2,870 cases made. —BS</td>
+    <td>2013</td>
+    <td>$79 </td>
+    <td align="right">97.0</td>
+    <td align="right">4</td>
+    </tr>
+    <tr>
+    <td align="right">15</td>
+    <td>Château Monbousquet St.-Emilion-</td>
+    <td>A rich, expressive, slightly showy style, with waves of cassis, creamed raspberry and boysenberry fruit racing forth, backed by a polished yet ample structure. The long, licorice- and ganache-framed finish packs on weight as it moves along, yet stays defined and pure. Impressive. Best from 2022 through 2040. 9,333 cases made. —JM</td>
+    <td>2015</td>
+    <td>$53 </td>
+    <td align="right">95.0</td>
+    <td align="right">4</td>
+    </tr>
+    <tr>
+    <td align="right">16</td>
+    <td>Caparzo Brunello di Montalcino-</td>
+    <td>This cuts more of a broad swath than its peers, yet remains graceful, evoking strawberry, cherry, tobacco and stony mineral flavors. Long and dense in structure, with a tobacco- and underbrush-tinged finish. Best from 2021 through 2033. 15,000 cases made. —BS</td>
+    <td>2013</td>
+    <td>$45 </td>
+    <td align="right">95.0</td>
+    <td align="right">4</td>
+    </tr>
+    <tr>
+    <td align="right">17</td>
+    <td>Château de Beaucastel Châteauneuf-du-Pape-</td>
+    <td>A stunner from the get-go, with waves of thoroughly seductive boysenberry, plum, blueberry and raspberry reduction forming the core, while roasted apple wood, rooibos tea, bergamot, and anise notes flash throughout. This has plenty of bass, with a Turkish coffee accent and a hint of alder driving underneath. Everything moves in lockstep through the seriously long finish. Best from 2020 through 2045. 12,500 cases made. —JM</td>
+    <td>2015</td>
+    <td>$99 </td>
+    <td align="right">97.0</td>
+    <td align="right">4</td>
+    </tr>
+    <tr>
+    <td align="right">18</td>
+    <td>San Felice Chianti Classico-</td>
+    <td>Expressive and smooth, this hits all the right notes, with pure black cherry, black currant and violet flavors. Touches of earth, iron and tobacco add complexity. Shows fine harmony and length. Best from 2020 through 2036. 25,000 cases made. —BS</td>
+    <td>2016</td>
+    <td>$17 </td>
+    <td align="right">94.0</td>
+    <td align="right">4</td>
+    </tr>
+    <tr>
+    <td align="right">19</td>
+    <td>Jasper Hill Shiraz Heathcote Georgia&#39;s Paddock-</td>
+    <td>Fragrant notes of dried rose petal and white truffle indicate something special. Inside, this offers a fleshy, velvety mix of toasted rye bread, spicy plum jam and framboise flavors. Elegant and plush, but with plenty of power within, flexing on the expressive, expansive finish that goes on and on. Drink now through 2035. 1,500 cases made. —MW</td>
+    <td>2015</td>
+    <td>$85 </td>
+    <td align="right">95.0</td>
+    <td align="right">4</td>
+    </tr>
+    <tr>
+    <td align="right">20</td>
+    <td>Scott Base Pinot Noir Central Otago-</td>
+    <td>Smooth, silky raspberry coulis and maraschino cherry notes are impressive for their purity, with accents of white chocolate, thyme, red licorice and cedar. Spicy cigar box accents emerge on the long, expressive and detailed finish. Drink now through 2028. 5,000 cases made. —MW</td>
+    <td>2016</td>
+    <td>$18 </td>
+    <td align="right">93.0</td>
+    <td align="right">4</td>
+    </tr>
+    <tr>
+    <td align="right">21</td>
+    <td>Vik Milla Cala Cachapoal Valley-</td>
+    <td>Rich and refined, delivering unctuous dark fruit and spice flavors that offer a creamy svelteness. Slate and mineral accents linger on the complex finish, with dark chocolate and olive notes. Cabernet Sauvignon, Carmenère, Cabernet Franc, Syrah and Merlot. Drink now through 2022. 4,000 cases made. —KM</td>
+    <td>2012</td>
+    <td>$39 </td>
+    <td align="right">94.0</td>
+    <td align="right">4</td>
+    </tr>
+    <tr>
+    <td align="right">22</td>
+    <td>Taylor Fladgate Vintage Port-</td>
+    <td>This is packed with raspberry, blackberry and blueberry fruit flavors that play off one another, melding with anise, fruitcake and ganache notes. A warm tarry edge coats the finish, revealing an echo of bramble. A seriously grippy, strapping Port, this revels in its power. Best from 2032 through 2055. 6,200 cases made. —JM</td>
+    <td>2016</td>
+    <td>$120 </td>
+    <td align="right">98.0</td>
+    <td align="right">3</td>
+    </tr>
+    <tr>
+    <td align="right">23</td>
+    <td>Antinori Toscana Tignanello-</td>
+    <td>Dense and intensely flavored, with violet, black currant, blackberry, graphite, wild herb and spice aromas and flavors, this is concentrated and solidly built, yet also harmonious, vibrant and pure. Approachable now, but should be better in a few years. Sangiovese, Cabernet Sauvignon and Cabernet Franc. Best from 2021 through 2035. 5,000 cases imported. —BS</td>
+    <td>2015</td>
+    <td>$135 </td>
+    <td align="right">97.0</td>
+    <td align="right">4</td>
+    </tr>
+    <tr>
+    <td align="right">24</td>
+    <td>Tensley Syrah Santa Barbara County Colson Canyon Vineyard-</td>
+    <td>A distinctive red, with power, polish and structure, offering floral blueberry and garrigue aromas and dynamic huckleberry, river stone and smoky meat flavors that take on momentum toward the refined tannins. Drink now through 2028. 1,900 cases made. —TF</td>
+    <td>2016</td>
+    <td>$42 </td>
+    <td align="right">94.0</td>
+    <td align="right">3</td>
+    </tr>
+    <tr>
+    <td align="right">25</td>
+    <td>Bodegas y Viñedos Valderiz Ribera del Duero-</td>
+    <td>Rich and focused, this red delivers ripe fruit flavors of currant and blackberry that mingle with espresso, mineral and licorice notes. The firm tannins are well-integrated and crisp acidity keeps this focused. Concentrated and harmonious. Drink now through 2030. 2,500 cases made. —TM</td>
+    <td>2015</td>
+    <td>$45 </td>
+    <td align="right">94.0</td>
+    <td align="right">3</td>
+    </tr>
+    <tr>
+    <td align="right">26</td>
+    <td>Roederer Estate Brut Anderson Valley-</td>
+    <td>Seamless and silky, showing an almost effortless sense of complexity, with notes of lemon and pear paired with toasty brioche, fresh ginger and hazelnut details. Drink now. 80,000 cases made. —TF</td>
+    <td>NV</td>
+    <td>$24 </td>
+    <td align="right">93.0</td>
+    <td align="right">3</td>
+    </tr>
+    <tr>
+    <td align="right">27</td>
+    <td>Penley Cabernet Sauvignon Coonawarra Phoenix-</td>
+    <td>Dense, with sink-your-teeth-into-them tannins and concentration to the plum, cassis and blackberry flavors. Sage and rosemary accents linger in the background. Strikes the right balance between power and elegance, with grace notes of eucalyptus, black tea and tobacco lingering on the velvety finish. Drink now through 2030. 4,300 cases imported. —MW</td>
+    <td>2016</td>
+    <td>$20 </td>
+    <td align="right">93.0</td>
+    <td align="right">4</td>
+    </tr>
+    <tr>
+    <td align="right">28</td>
+    <td>Bodegas Breca Garnacha Aragón Old Vines-</td>
+    <td>Round, smooth and dense, this red shows harmony and balance. Plum and blackberry flavors mingle with black olive, toast and mineral notes, supported by well-integrated tannins and fresh acidity, leaving a lovely floral finish. Drink now through 2027. 20,000 cases made. —TM</td>
+    <td>2015</td>
+    <td>$16 </td>
+    <td align="right">92.0</td>
+    <td align="right">3</td>
+    </tr>
+    <tr>
+    <td align="right">29</td>
+    <td>DeLille Syrah Yakima Valley Signature-</td>
+    <td>Polished and gracefully complex, with refined blackberry, espresso and smoked pepper flavors that glide along toward refined tannins. Drink now through 2025. 700 cases made. —TF</td>
+    <td>2015</td>
+    <td>$46 </td>
+    <td align="right">94.0</td>
+    <td align="right">4</td>
+    </tr>
+    <tr>
+    <td align="right">30</td>
+    <td>Domaine Giraud Châteauneuf-du-Pape-</td>
+    <td>Enticing, with bright, engaging raspberry, cherry and red currant fruit infused with gently roasted sandalwood and apple wood, garrigue and licorice root notes. A swath of tobacco underscores the finish, giving this an old-school hint. Best from 2020 through 2040. 2,500 cases made. —JM</td>
+    <td>2016</td>
+    <td>$55 </td>
+    <td align="right">95.0</td>
+    <td align="right">3</td>
+    </tr>
+    <tr>
+    <td align="right">31</td>
+    <td>Nautilus Sauvignon Blanc Marlborough-</td>
+    <td>Rich and complex, with honeysuckle and freshly grated ginger notes up front, giving way to juicy and crisp Meyer lemon, yellow apple and Asian pear flavors. Hints of lime zest and dried mango linger. Drink now. 10,000 cases imported. —MW</td>
+    <td>2017</td>
+    <td>$17 </td>
+    <td align="right">92.0</td>
+    <td align="right">3</td>
+    </tr>
+    <tr>
+    <td align="right">32</td>
+    <td>Château Branaire-Ducru St.-Julien-</td>
+    <td>This pumps lush fig, boysenberry and blackberry confiture notes along, pushed by a rather polished but ample structure. Lots of anise and violet details cascade in on the finish, giving this extra aromatic dimension. Best from 2020 through 2038. 15,000 cases made. —JM</td>
+    <td>2015</td>
+    <td>$58 </td>
+    <td align="right">94.0</td>
+    <td align="right">4</td>
+    </tr>
+    <tr>
+    <td align="right">33</td>
+    <td>Lingua Franca Chardonnay Willamette Valley Bunker Hill-</td>
+    <td>Sleek and seamlessly complex, featuring expressive floral lemongrass and steely mineral aromas and plush yet refined green apple and lemon flavors accented by spicy lees. Drink now through 2022. 692 cases made. —TF</td>
+    <td>2016</td>
+    <td>$50 </td>
+    <td align="right">94.0</td>
+    <td align="right">3</td>
+    </tr>
+    <tr>
+    <td align="right">34</td>
+    <td>Descendientes de J. Palacios Bierzo Pétalos-</td>
+    <td>This savory red offers notes of espresso, black olive and graphite framing a core of black cherry and licorice. Fine-grained tannins and fresh acidity keep this balanced. Harmonious and graceful. Drink now through 2024. 27,000 cases made. —TM</td>
+    <td>2016</td>
+    <td>$21 </td>
+    <td align="right">92.0</td>
+    <td align="right">3</td>
+    </tr>
+    <tr>
+    <td align="right">35</td>
+    <td>Ferrari-Carano Chardonnay Russian River Valley Tré Terre Vineyard Select Collection-</td>
+    <td>Strikes a fine balance between vibrant citrus and green apple and pear notes. Lightly oaky and creamy midpalate, this is deftly elegant and refined. Drink now through 2022. 5,400 cases made. —JL</td>
+    <td>2016</td>
+    <td>$28 </td>
+    <td align="right">93.0</td>
+    <td align="right">3</td>
+    </tr>
+    <tr>
+    <td align="right">36</td>
+    <td>Bodegas Hidalgo La Gitana Manzanilla Sanlúcar de Barrameda La Gitana-</td>
+    <td>A bright, high-pitched style, showing tangy quinine and chamomile notes laced with talc and fleur de sel flavors. Very dry, brisk, stony-edged finish. An absolute delight. Drink now. 62,000 cases made. —JM</td>
+    <td>NV</td>
+    <td>$26 </td>
+    <td align="right">92.0</td>
+    <td align="right">3</td>
+    </tr>
+    <tr>
+    <td align="right">37</td>
+    <td>Leeuwin Chardonnay Margaret River Art Series-</td>
+    <td>Supple and creamy up front, with precision to the nutmeg, lemon curd, verbena and mandarin orange flavors, which are intense and harmonious. The elegant body and lingering accents of ginger and citrus zest elevate this white to something special. Drink now through 2028. 800 cases imported. —MW</td>
+    <td>2015</td>
+    <td>$89 </td>
+    <td align="right">95.0</td>
+    <td align="right">3</td>
+    </tr>
+    <tr>
+    <td align="right">38</td>
+    <td>Patricia Green Pinot Noir Willamette Valley Reserve-</td>
+    <td>Shows structure and sleek polish, with expressive raspberry and rose petal aromas and layered red plum, black tea and spice flavors that linger toward refined tannins. Drink now through 2024. 2,917 cases made. —TF</td>
+    <td>2016</td>
+    <td>$27 </td>
+    <td align="right">93.0</td>
+    <td align="right">3</td>
+    </tr>
+    <tr>
+    <td align="right">39</td>
+    <td>Cline Zinfandel Contra Costa County Ancient Vines-</td>
+    <td>Lively and supple, with floral raspberry and fresh pepper aromas and sleekly appealing cherry and licorice flavors that glide lightly along the finish. Drink now through 2022. 50,000 cases made. —TF</td>
+    <td>2016</td>
+    <td>$15 </td>
+    <td align="right">91.0</td>
+    <td align="right">3</td>
+    </tr>
+    <tr>
+    <td align="right">40</td>
+    <td>San Román Bodegas y Viñedos Toro-</td>
+    <td>A velvety texture carries ripe fruit flavors of plum and blackberry in this plush red. Cocoa, loamy earth and mineral notes add depth and interest. Ripe tannins are well-integrated, and balsamic acidity keeps this lively. Drink now through 2029. 8,000 cases made. —TM</td>
+    <td>2014</td>
+    <td>$67 </td>
+    <td align="right">94.0</td>
+    <td align="right">3</td>
+    </tr>
+    <tr>
+    <td align="right">41</td>
+    <td>Loveblock Pinot Noir Central Otago-</td>
+    <td>Rich and creamy, with clove-scented notes of black cherry, plum and licorice that are vibrant and expressive, while intriguing details of forest floor and fresh herb linger, adding another dimension. Shows terrific harmony on the finish. Drink now through 2028. 7,000 cases made. —MW</td>
+    <td>2015</td>
+    <td>$30 </td>
+    <td align="right">92.0</td>
+    <td align="right">3</td>
+    </tr>
+    <tr>
+    <td align="right">42</td>
+    <td>Milbrandt Cabernet Sauvignon Columbia Valley-</td>
+    <td>Precise and well-built, with refined black cherry and black tea flavors that build dimension toward polished tannins. Drink now through 2024. 4,000 cases made. —TF</td>
+    <td>2015</td>
+    <td>$17 </td>
+    <td align="right">91.0</td>
+    <td align="right">4</td>
+    </tr>
+    <tr>
+    <td align="right">43</td>
+    <td>Nik Weis St.-Urbans-Hof Riesling Qualitätswein Mosel From Old Vines-</td>
+    <td>A pure, well-sculpted, off-dry version, with persimmon, lime and slate flavors coating the palate. Hints of orchard blossom and herbs add to the complexity, making you reach for another sip. Drink now through 2024. 7,000 cases made. —AZ</td>
+    <td>2016</td>
+    <td>$19 </td>
+    <td align="right">91.0</td>
+    <td align="right">3</td>
+    </tr>
+    <tr>
+    <td align="right">44</td>
+    <td>Easton Zinfandel Amador County-</td>
+    <td>Epitomizes fine Sierra Foothills Zinfandel, offering vibrant, briary raspberry, smoked pepper and wild sweet anise flavors that stretch out on the zesty finish. Drink now through 2023. 6,200 cases made. —TF</td>
+    <td>2015</td>
+    <td>$22 </td>
+    <td align="right">92.0</td>
+    <td align="right">3</td>
+    </tr>
+    <tr>
+    <td align="right">45</td>
+    <td>Henri Bourgeois Sancerre Les Baronnes-</td>
+    <td>Lively, with bright lemon curd, gooseberry, thyme and lime pith notes. The bright finish has mouthwatering cut thanks to a light chalky echo. Drink now through 2021. 7,000 cases made. —JM</td>
+    <td>2017</td>
+    <td>$25 </td>
+    <td align="right">92.0</td>
+    <td align="right">3</td>
+    </tr>
+    <tr>
+    <td align="right">46</td>
+    <td>Edetària Garnatxa Blanca Terra Alta Via Terra-</td>
+    <td>This white has a thick texture, delivering pear, guava, tarragon and blanched almond flavors. Firm acidity and a touch of tannins give this a solid frame. Muscular, but remains balanced. Drink now through 2023. 5,000 cases made. —TM</td>
+    <td>2017</td>
+    <td>$15 </td>
+    <td align="right">91.0</td>
+    <td align="right">3</td>
+    </tr>
+    <tr>
+    <td align="right">47</td>
+    <td>Nigl Grüner Veltliner Niederösterreich Freiheit-</td>
+    <td>Grass and pine aromas and flavors predominate, with peach, grapefruit and floral notes underneath. Fine balance and persistence here, ending with mouthwatering notes of peach, flowers and mineral. Drink now through 2024. 1,000 cases imported. —BS</td>
+    <td>2016</td>
+    <td>$20 </td>
+    <td align="right">91.0</td>
+    <td align="right">3</td>
+    </tr>
+    <tr>
+    <td align="right">48</td>
+    <td>Domaine Gerovassiliou Malagousia Epanomi Single Vineyard-</td>
+    <td>A lovely nose of floral and citrus notes leads to expressive flavors of ruby red grapefruit granita and ripe yellow peach in this well-cut, light- to medium-bodied white. Lithe and lingering on the minerally finish. Drink now through 2023. 6,700 cases made. —AN</td>
+    <td>2016</td>
+    <td>$23 </td>
+    <td align="right">91.0</td>
+    <td align="right">3</td>
+    </tr>
+    <tr>
+    <td align="right">49</td>
+    <td>The Four Graces Pinot Noir Willamette Valley-</td>
+    <td>An expressive and supple version, with a complex core of lively tannins and acidity, plus accents of black cherry, cinnamon and spice that linger toward the minerally finish. Drink now through 2024. 14,140 cases made. —TF</td>
+    <td>2015</td>
+    <td>$32 </td>
+    <td align="right">93.0</td>
+    <td align="right">4</td>
+    </tr>
+    <tr>
+    <td align="right">50</td>
+    <td>Radikon Venezia-Giulia Slatnik S Label-</td>
+    <td>Like walking through a Turkish bazaar, this wafts spice and citrus notes that pull you into the glass, while vibrant, lightly zesty acidity and light tannins form a firm, well-knit frame for the spiced range of glazed apricot, kumquat, spun honey, rose and mint flavors. Long and intriguing. Chardonnay and Friulano. Drink now through 2030. 400 cases made. —AN</td>
+    <td>2015</td>
+    <td>$35 </td>
+    <td align="right">95.0</td>
+    <td align="right">4</td>
+    </tr>
+    <tr>
+    <td align="right">51</td>
+    <td>Domaine des Baumard Quarts de Chaume-</td>
+    <td>Waves of creamed Jonagold apple, Cavaillon melon, mirabelle plum, mango and white peach flavors provide thrilling range, while flashes of honeysuckle and verbena add detail and focus throughout. Unctuous yet pure, sweet yet invigorating, with an inner brightness that matches the outward hedonism. Best from 2020 through 2045. 100 cases imported. —JM</td>
+    <td>2015</td>
+    <td>$80 </td>
+    <td align="right">98.0</td>
+    <td align="right">3</td>
+    </tr>
+    <tr>
+    <td align="right">52</td>
+    <td>Sequoia Grove Cabernet Sauvignon Napa Valley-</td>
+    <td>Rich, smoky oak and plump dark berry, mocha, cedar and sage flavors form an enticing mouthful, supported by a supple, caressing texture, ending long and full. Drink now through 2030. 18,106 cases made. —JL</td>
+    <td>2015</td>
+    <td>$42 </td>
+    <td align="right">93.0</td>
+    <td align="right">4</td>
+    </tr>
+    <tr>
+    <td align="right">53</td>
+    <td>Terre del Barolo Barolo Undicicomuni Arnaldo Rivera-</td>
+    <td>The sweet fruit and solid structure play off each other as this evolves. Starts with floral, cherry, strawberry and licorice flavors, melding into the firm, resonant tannins as the finish extends. Complex, balanced and set for a long life. Best from 2022 through 2036. 4,150 cases made. —BS</td>
+    <td>2013</td>
+    <td>$30 </td>
+    <td align="right">93.0</td>
+    <td align="right">4</td>
+    </tr>
+    <tr>
+    <td align="right">54</td>
+    <td>Château Beau-Séjour Bécot St.-Emilion-</td>
+    <td>This brims with ripe, juicy plum, blackberry and açaí berry flavors, studded with licorice and fruitcake notes and backed by a nicely integrated apple wood detail through the finish. Pumps a lot of fruit out but does so energetically. Best from 2020 through 2035. 6,250 cases made. —JM</td>
+    <td>2015</td>
+    <td>$65 </td>
+    <td align="right">95.0</td>
+    <td align="right">3</td>
+    </tr>
+    <tr>
+    <td align="right">55</td>
+    <td>Yalumba Viognier South Australia The Y Series-</td>
+    <td>Lemon, chamomile and spicy nectarine flavors are fresh and vibrant, set on a crisp body, finishing spicy and refreshing, with plenty of intensity. Drink now. 19,000 cases imported. —MW</td>
+    <td>2017</td>
+    <td>$13 </td>
+    <td align="right">90.0</td>
+    <td align="right">3</td>
+    </tr>
+    <tr>
+    <td align="right">56</td>
+    <td>Hamilton Russell Chardonnay Hemel-en-Aarde Valley-</td>
+    <td>Melon, yellow apple, white peach and quince flavors give this an opulent feel, harnessed by honeysuckle and quinine accents through the finish, showing refinement and length in the end. Drink now through 2021. 2,100 cases imported. —JM</td>
+    <td>2017</td>
+    <td>$40 </td>
+    <td align="right">93.0</td>
+    <td align="right">3</td>
+    </tr>
+    <tr>
+    <td align="right">57</td>
+    <td>Vasse Felix Cabernet Sauvignon Margaret River Filius-</td>
+    <td>Opens with a fresh green accent reminiscent of tomato leaf and sage, giving a savory, peppery note to the plush, velvety cassis and plum core. Finds balance between grace and power, with spice and herb elements lingering on the finish. Drink now through 2028. 800 cases imported. —MW</td>
+    <td>2015</td>
+    <td>$27 </td>
+    <td align="right">92.0</td>
+    <td align="right">3</td>
+    </tr>
+    <tr>
+    <td align="right">58</td>
+    <td>R. López de Heredia Viña Tondonia Rioja White Viña Gravonia Crianza-</td>
+    <td>Rich and firm, this white shows complex flavors of dried apple, creamed pear, heather, white tea, coconut and vanilla. Juicy acidity and light tannins keep this focused, providing structure for the long haul. A lovely example of the traditional style. Drink now through 2026. 1,791 cases made. —TM</td>
+    <td>2008</td>
+    <td>$36 </td>
+    <td align="right">93.0</td>
+    <td align="right">4</td>
+    </tr>
+    <tr>
+    <td align="right">59</td>
+    <td>Fontodi Chianti Classico Vigna del Sorbo Gran Selezione-</td>
+    <td>This is concentrated and monolithic, with blackberry and black cherry flavors augmented by tar, tobacco and iron notes. Offers excellent potential, but needs time to absorb the tannins. Powerful, showing fine length. Best from 2023 through 2040. 1,800 cases made. —BS</td>
+    <td>2015</td>
+    <td>$89 </td>
+    <td align="right">95.0</td>
+    <td align="right">4</td>
+    </tr>
+    <tr>
+    <td align="right">60</td>
+    <td>Merlin Mâcon-La Roche Vineuse-</td>
+    <td>Complex, exhibiting saline and mineral elements, along with white peach, apple and spice flavors. Beautifully balanced and focused, remaining intense and long on the juicy finish. Drink now through 2024. 500 cases imported. —BS</td>
+    <td>2016</td>
+    <td>$25 </td>
+    <td align="right">92.0</td>
+    <td align="right">4</td>
+    </tr>
+    <tr>
+    <td align="right">61</td>
+    <td>Joel Gott Sauvignon Blanc California-</td>
+    <td>Juicy pear, peach and citrus flavors are bright and smooth, with a touch of dried chamomile and lemon verbena lingering on the finish. Impressive for the focus and aromatic detail. Drink now. 96,700 cases made. —MW</td>
+    <td>2017</td>
+    <td>$15 </td>
+    <td align="right">90.0</td>
+    <td align="right">3</td>
+    </tr>
+    <tr>
+    <td align="right">62</td>
+    <td>Château Gloria St.-Julien-</td>
+    <td>Well-steeped plum, fig and boysenberry fruit is richly layered, supported by embedded brambly grip and backed by waves of ganache and sweet tobacco on the finish. This has plenty of energy to carry it in the cellar while it rounds into form. Best from 2023 through 2038. 18,333 cases made. —JM</td>
+    <td>2015</td>
+    <td>$44 </td>
+    <td align="right">93.0</td>
+    <td align="right">4</td>
+    </tr>
+    <tr>
+    <td align="right">63</td>
+    <td>Terra Santa Île de Beauté White-</td>
+    <td>A bright and distinctive white, offering lively lemon zest, honeysuckle, quinine and tangerine notes mixed together, with good zip. Drink now. 22,000 cases made. —JM</td>
+    <td>2017</td>
+    <td>$15 </td>
+    <td align="right">90.0</td>
+    <td align="right">3</td>
+    </tr>
+    <tr>
+    <td align="right">64</td>
+    <td>Bodega El Esteco Malbec Calchaquí Valley Don David Reserve-</td>
+    <td>Dried red fruit flavors are lively, offering a surplus of rich, dried savory herb notes. Accents of hot stone and white pepper flood the finish. Drink now through 2023. 110,000 cases made. —KM</td>
+    <td>2017</td>
+    <td>$16 </td>
+    <td align="right">90.0</td>
+    <td align="right">3</td>
+    </tr>
+    <tr>
+    <td align="right">65</td>
+    <td>Peter Lauer Riesling Qualitätswein Feinherb Mosel Barrel X-</td>
+    <td>A lithe white, showing fine clarity and focus, with orange blossom aromas followed by kumquat and nectarine notes on the palate. Off-dry, offering ample acidity for balance, with a mineral-infused finish. Drink now through 2020. 1,000 cases imported. —AZ</td>
+    <td>2016</td>
+    <td>$22 </td>
+    <td align="right">91.0</td>
+    <td align="right">3</td>
+    </tr>
+    <tr>
+    <td align="right">66</td>
+    <td>Tiefenbrunner Pinot Grigio Vigneti delle Dolomiti-</td>
+    <td>This balanced, light-bodied white offers a lively mix of peach, passion fruit, floral and pink grapefruit zest notes, with tangy acidity and a floral finish. Drink now through 2021. 25,800 cases made. —AN</td>
+    <td>2017</td>
+    <td>$16 </td>
+    <td align="right">90.0</td>
+    <td align="right">3</td>
+    </tr>
+    <tr>
+    <td align="right">67</td>
+    <td>Louis Jadot Bourgogne-</td>
+    <td>Infused with graphite and cherry aromas and flavors, this red is expressive and silky, with a good underlying structure for balance. Drink now through 2023. 35,000 cases imported. —BS</td>
+    <td>2015</td>
+    <td>$19 </td>
+    <td align="right">90.0</td>
+    <td align="right">3</td>
+    </tr>
+    <tr>
+    <td align="right">68</td>
+    <td>Bookwalter Cabernet Sauvignon Columbia Valley Readers-</td>
+    <td>Polished yet appealingly brawny, with floral black cherry, toasted spice and bittersweet chocolate flavors that take on momentum toward refined tannins. Drink now through 2026. 3,405 cases made. —TF</td>
+    <td>2015</td>
+    <td>$28 </td>
+    <td align="right">92.0</td>
+    <td align="right">3</td>
+    </tr>
+    <tr>
+    <td align="right">69</td>
+    <td>Concha y Toro Carmenère Peumo Serie Riberas Gran Reserva-</td>
+    <td>This boasts richly spiced aromas, with flavors to match, as well as dried raspberry, portobello mushroom and currant elements. Dried beef notes on the powerful finish. Drink now through 2021. 33,000 cases made. —KM</td>
+    <td>2016</td>
+    <td>$17 </td>
+    <td align="right">90.0</td>
+    <td align="right">3</td>
+    </tr>
+    <tr>
+    <td align="right">70</td>
+    <td>Odette Cabernet Sauvignon Stags Leap District-</td>
+    <td>Beautifully crafted, rich and polished, with a dense core of dark berry, mocha, cedar, crushed rock and licorice flavors, combining power and finesse in an impressive showing. Drink now through 2034. 2,324 cases made. —JL</td>
+    <td>2015</td>
+    <td>$140 </td>
+    <td align="right">95.0</td>
+    <td align="right">4</td>
+    </tr>
+    <tr>
+    <td align="right">71</td>
+    <td>Casa Ferreirinha Douro White Papa Figos-</td>
+    <td>Aromatic, with notes of beeswax and almond flanking the lemon curd, pureed mango and peach flavors of this medium- to full-bodied white. Spice, herb and mineral details cascade into the long, creamy finish. Drink now through 2019. 20,000 cases made. —GS</td>
+    <td>2016</td>
+    <td>$18 </td>
+    <td align="right">90.0</td>
+    <td align="right">3</td>
+    </tr>
+    <tr>
+    <td align="right">72</td>
+    <td>Prà Soave Classico Otto-</td>
+    <td>A lively, lithe white, with lovely lime blossom, pink grapefruit sorbet, stone and spice notes that linger on the mouthwatering finish. Drink now through 2022. 22,500 cases made. —AN</td>
+    <td>2017</td>
+    <td>$20 </td>
+    <td align="right">90.0</td>
+    <td align="right">3</td>
+    </tr>
+    <tr>
+    <td align="right">73</td>
+    <td>Big Table Farm Pinot Noir Willamette Valley-</td>
+    <td>Effortlessly elegant and complex, with vibrant rose petal, savory smoke and raspberry accents that glide along a silky texture toward the long finish. Drink now through 2024. 1,835 cases made. —TF</td>
+    <td>2016</td>
+    <td>$45 </td>
+    <td align="right">93.0</td>
+    <td align="right">4</td>
+    </tr>
+    <tr>
+    <td align="right">74</td>
+    <td>Schloss Gobelsburg Grüner Veltliner Kamptal-</td>
+    <td>An aromatic style, boasting lilac and freesia accents. Apple and grapefruit notes prevail as this elegant white winds down on the graceful finish. Drink now through 2023. 3,700 cases imported. —BS</td>
+    <td>2016</td>
+    <td>$20 </td>
+    <td align="right">90.0</td>
+    <td align="right">3</td>
+    </tr>
+    <tr>
+    <td align="right">75</td>
+    <td>La Stoppa Emilia Trebbiolo-</td>
+    <td>A pure beam of juicy black currant is underscored by woodsy spice, licorice and tea rose notes in this bright and appealing, medium-bodied red, with light tannins. Barbera and Bonarda. Drink now through 2023. 2,216 cases made. —AN</td>
+    <td>2014</td>
+    <td>$22 </td>
+    <td align="right">91.0</td>
+    <td align="right">3</td>
+    </tr>
+    <tr>
+    <td align="right">76</td>
+    <td>A. Clape Cornas-</td>
+    <td>This has it all, from the dark, dense core of steeped fig, blackberry and black currant fruit to the smoldering charcoal, dark olive and singed bay leaf notes. Violet and white pepper nuances add lift before a prodigious warm cast-iron element provides spine on the finish. A brick house that will live for quite some time. Best from 2025 through 2045. 230 cases imported. —JM</td>
+    <td>2015</td>
+    <td>$140 </td>
+    <td align="right">98.0</td>
+    <td align="right">4</td>
+    </tr>
+    <tr>
+    <td align="right">77</td>
+    <td>Landmark Chardonnay Sonoma County Overlook-</td>
+    <td>Well-built and rich, with a solid core of apple pastry, fig and guava flavors that offer a creamy texture. Nutmeg and clove notes show on the spicy finish. Drink now through 2022. 30,000 cases made. —KM</td>
+    <td>2016</td>
+    <td>$25 </td>
+    <td align="right">91.0</td>
+    <td align="right">3</td>
+    </tr>
+    <tr>
+    <td align="right">78</td>
+    <td>Henri Gouges Nuits-St.-Georges Clos des Porrets St.-Georges-</td>
+    <td>This red combines flavors of cherry, currant, spice and mineral with a core of sweet fruit, a silky texture and firm, chalky tannins. Finishes on the chewy side, with mouthcoating but not astringent tannins. Best from 2023 through 2040. 400 cases imported. —BS</td>
+    <td>2015</td>
+    <td>$94 </td>
+    <td align="right">95.0</td>
+    <td align="right">3</td>
+    </tr>
+    <tr>
+    <td align="right">79</td>
+    <td>Beringer Cabernet Sauvignon Knights Valley-</td>
+    <td>Firm, rich and tightly focused on a core of vivid dark berry, light mocha and cedar flavors, finishing long and layered. A real treat. Drink now through 2026. 85,000 cases made. —JL</td>
+    <td>2015</td>
+    <td>$36 </td>
+    <td align="right">92.0</td>
+    <td align="right">3</td>
+    </tr>
+    <tr>
+    <td align="right">80</td>
+    <td>Librandi Val di Neto White Critone-</td>
+    <td>Fresh and floral, with lime blossom, kiwifruit, peach and blood orange sorbet flavors, this medium-bodied white is backed by vibrant acidity and lingers with spice and graphite accents. Chardonnay with Sauvignon Blanc. Drink now through 2021. 30,000 cases made. —AN</td>
+    <td>2017</td>
+    <td>$15 </td>
+    <td align="right">90.0</td>
+    <td align="right">3</td>
+    </tr>
+    <tr>
+    <td align="right">81</td>
+    <td>Pendulum Cabernet Sauvignon Columbia Valley-</td>
+    <td>Sleek and well-defined, with expressive black cherry and savory spice flavors that finish with polished tannins. Drink now through 2023. 11,500 cases made. —TF</td>
+    <td>2016</td>
+    <td>$19 </td>
+    <td align="right">90.0</td>
+    <td align="right">3</td>
+    </tr>
+    <tr>
+    <td align="right">82</td>
+    <td>HW Wine Company Languedoc Rosé Diving Into Hampton Water-</td>
+    <td>A nicely crafted rosé, with a hint of creamy richness lining the strawberry, melon and white cherry flavors. A dash of minerality imparts depth through the long, mouthwatering finish. A crowd-pleaser. Grenache, Cinsault, Mourvèdre and Syrah. Drink now. 35,000 cases made. —GS</td>
+    <td>2017</td>
+    <td>$25 </td>
+    <td align="right">90.0</td>
+    <td align="right">4</td>
+    </tr>
+    <tr>
+    <td align="right">83</td>
+    <td>Château Ducru-Beaucaillou St.-Julien-</td>
+    <td>Showy, with layers of warmed fig, roasted mesquite, black tea, incense and Turkish coffee notes, followed by waves of lush cassis, blackberry and raspberry confiture flavors. This has a graphite grounding rod, a tarry spine and riveting licorice snap details to keep it driving along. A head-turner for sure. Best from 2025 through 2045. 7,500 cases made. —JM</td>
+    <td>2015</td>
+    <td>$177 </td>
+    <td align="right">97.0</td>
+    <td align="right">4</td>
+    </tr>
+    <tr>
+    <td align="right">84</td>
+    <td>Sleight of Hand Syrah Columbia Valley Levitation-</td>
+    <td>Polished and expressive, with blackberry, smoky sweet anise and cracked pepper flavors that take on richness toward refined tannins. Drink now through 2024. 750 cases made. —TF</td>
+    <td>2015</td>
+    <td>$45 </td>
+    <td align="right">93.0</td>
+    <td align="right">3</td>
+    </tr>
+    <tr>
+    <td align="right">85</td>
+    <td>Massican Annia Napa Valley-</td>
+    <td>A complex and inviting white, showing intricate nuances of roasted almond, matcha, honeysuckle and orange zest, mingling with supple, juicy Asian pear, tangerine and ripe melon notes. The smooth texture and a thread of acidity add to the appeal. Ribolla Gialla, Tocai Friulano and Chardonnay. Drink now. 1,128 cases made. —MW</td>
+    <td>2017</td>
+    <td>$30 </td>
+    <td align="right">92.0</td>
+    <td align="right">4</td>
+    </tr>
+    <tr>
+    <td align="right">86</td>
+    <td>Golan Heights Winery Cabernet Sauvignon Galilee Yarden-</td>
+    <td>A sinewy, full-bodied red, with balsamic acidity gliding through the black olive, currant and eucalyptus flavors. Spice, mineral and leather details gain traction into the long finish. Cabernet Sauvignon, Merlot and Cabernet Franc. Kosher. Drink now through 2023. 23,486 cases made. —GS</td>
+    <td>2014</td>
+    <td>$33 </td>
+    <td align="right">91.0</td>
+    <td align="right">4</td>
+    </tr>
+    <tr>
+    <td align="right">87</td>
+    <td>Paolo Scavino Barolo-</td>
+    <td>This starts out with plenty of cherry, plum and orange peel flavors, offset by iron, eucalyptus and tobacco accents. The finish is rustic, with the tannins flexing their muscles, yet this comes together in the end. A wine for the long haul. Best from 2023 through 2040. 2,500 cases made. —BS</td>
+    <td>2014</td>
+    <td>$49 </td>
+    <td align="right">93.0</td>
+    <td align="right">4</td>
+    </tr>
+    <tr>
+    <td align="right">88</td>
+    <td>Lucienne Pinot Noir Santa Lucia Highlands Doctor&#39;s Vineyard-</td>
+    <td>Rich and layered, with plump, juicy wild berry, raspberry, blackberry jam and cedar flavors. A full and complete style that touches all the bases. Drink now through 2025. 777 cases made. —JL</td>
+    <td>2016</td>
+    <td>$50 </td>
+    <td align="right">93.0</td>
+    <td align="right">3</td>
+    </tr>
+    <tr>
+    <td align="right">89</td>
+    <td>Domaine St.-Préfert Châteauneuf-du-Pape Auguste Favier Réserve-</td>
+    <td>This is beautifully rendered, with a core of focused red currant, plum and raspberry coulis flavors that stretches out nicely while flecks of tobacco, bergamot and singed sandalwood weave around. A bolt of iron detail shows through the finish, with a light echo of worn leather. Well-built, showing ample energy in reserve. Best from 2020 through 2040. 1,400 cases made. —JM</td>
+    <td>2016</td>
+    <td>$62 </td>
+    <td align="right">97.0</td>
+    <td align="right">4</td>
+    </tr>
+    <tr>
+    <td align="right">90</td>
+    <td>Ridge Lytton Springs Dry Creek Valley-</td>
+    <td>Briary and subtly potent, with floral black raspberry and licorice aromas and zesty, well-built dark cherry, smoky anise and pepper flavors that finish with ripe tannins. Zinfandel, Petite Sirah, Carignane and Mourvèdre. Best from 2019 through 2024. 9,750 cases made. —TF</td>
+    <td>2015</td>
+    <td>$40 </td>
+    <td align="right">92.0</td>
+    <td align="right">3</td>
+    </tr>
+    <tr>
+    <td align="right">91</td>
+    <td>Sadie Family Skerpioen Swartland-</td>
+    <td>Intense and still youthfully tight, with verbena and white peach notes leading the way for yellow apple, chamomile, white ginger and jasmine flavors. A lovely quinine streak is well-embedded, giving this tension and vibrancy through the finish. Chenin Blanc and Palomino. Drink now through 2024. 406 cases made. —JM</td>
+    <td>2016</td>
+    <td>$60 </td>
+    <td align="right">95.0</td>
+    <td align="right">3</td>
+    </tr>
+    <tr>
+    <td align="right">92</td>
+    <td>Carol Shelton Rosé Wild Thing Rendezvous Mendocino County-</td>
+    <td>A spirited California rosé, with lively raspberry, cherry and spice flavors that dance along the finish. Carignane, Zinfandel and Cabernet Sauvignon. Drink now. 1,616 cases made. —TF</td>
+    <td>2017</td>
+    <td>$15 </td>
+    <td align="right">90.0</td>
+    <td align="right">3</td>
+    </tr>
+    <tr>
+    <td align="right">93</td>
+    <td>Matervini Malbec Luján de Cuyo Finca Perdriel-</td>
+    <td>Big, rich and full-bodied, with inky accents to the ripe dark plum, cherry and blackberry flavors. Black licorice notes show midpalate, with mocha and dark chocolate details on the dense finish. Drink now through 2022. 336 cases made. —KM</td>
+    <td>2015</td>
+    <td>$90 </td>
+    <td align="right">94.0</td>
+    <td align="right">3</td>
+    </tr>
+    <tr>
+    <td align="right">94</td>
+    <td>Ghost Pines Pinot Noir Yolo-Sonoma-Monterey Counties Winemaker&#39;s Blend-</td>
+    <td>Complex and spicy, offering wild plum, blackberry, spice and tea flavors that show subtle herb shadings, ending with dusty, loamy tannins and good length. Drink now through 2023. 13,000 cases made. —JL</td>
+    <td>2016</td>
+    <td>$23 </td>
+    <td align="right">90.0</td>
+    <td align="right">3</td>
+    </tr>
+    <tr>
+    <td align="right">95</td>
+    <td>Tabarrini Montefalco Sagrantino Colle alle Macchie-</td>
+    <td>There&#39;s a pleasing creaminess to the intense tannins of this harmonious, full-bodied red, offering crushed cassis and black raspberry fruit that shows accents of lavender and rosemary, with licorice, espresso and loamy earth notes. An iron fist in a velvet glove, this should unfurl beautifully with age. Best from 2020 through 2035. 175 cases made. —AN</td>
+    <td>2013</td>
+    <td>$75 </td>
+    <td align="right">95.0</td>
+    <td align="right">4</td>
+    </tr>
+    <tr>
+    <td align="right">96</td>
+    <td>Drouhin Oregon Roserock Chardonnay Eola-Amity Hills-</td>
+    <td>Polished and refined, with expressive apple, ripe cantaloupe and spice flavors that take on richness on the long finish. Drink now through 2020. 2,866 cases made. —TF</td>
+    <td>2016</td>
+    <td>$35 </td>
+    <td align="right">91.0</td>
+    <td align="right">3</td>
+    </tr>
+    <tr>
+    <td align="right">97</td>
+    <td>Loring Pinot Noir Sta. Rita Hills-</td>
+    <td>Powerful, focused and well-spiced, with flavors of dark cherry, plum tart and dried beef that lengthen out nicely. Pastry notes linger midpalate, leading to a finish of cola nut and chocolate nib accents. Drink now through 2022. 900 cases made. —KM</td>
+    <td>2016</td>
+    <td>$38 </td>
+    <td align="right">92.0</td>
+    <td align="right">3</td>
+    </tr>
+    <tr>
+    <td align="right">98</td>
+    <td>Cleto Chiarli e Figli Lambrusco di Sorbara del Fondatore-</td>
+    <td>A well-knit rosé Lambrusco, featuring a fine, lively mousse and a bright mix of crushed raspberry, crunchy peach, dried thyme and rose petal notes, with a tangy finish of citrus zest and spice. Drink now through 2020. 5,000 cases made. —AN</td>
+    <td>2016</td>
+    <td>$17 </td>
+    <td align="right">90.0</td>
+    <td align="right">3</td>
+    </tr>
+    <tr>
+    <td align="right">99</td>
+    <td>Foley Johnson Meritage Rutherford-</td>
+    <td>Bordeaux-like, offering an expansive mix of currant, cedar, cigar box, riverbed and tobacco leaf flavors. Cabernet Sauvignon, Merlot, Petit Verdot, Malbec and Cabernet Franc. Best from 2020 through 2032. 1,429 cases made. —JL</td>
+    <td>2014</td>
+    <td>$45 </td>
+    <td align="right">92.0</td>
+    <td align="right">3</td>
+    </tr>
+    </tbody></table>
+    </div>
+    <div class="tab-pane fade" id="contact-just" role="tabpanel" aria-labelledby="contact-tab-just">
+      <table id="dtVerticalScrollExample3" class="table table-striped table-bordered table-sm" cellspacing="0"
+      width="100%">
+        <thead><tr><th title="Field #1"></th>
+        <th title="Field #2">Wine</th>
+        <th title="Field #3">Description</th>
+        <th title="Field #4">Vintage</th>
+        <th title="Field #5">Price</th>
+        <th title="Field #6">Score</th>
+        <th title="Field #7">Model Rating</th>
+        </tr></thead>
+        <tbody><tr>
+        <td align="right">0</td>
+        <td>Duckhorn Merlot Napa Valley Three Palms Vineyard-</td>
+        <td>A powerful red, with concentrated flavors of red plum, cherry and boysenberry that are layered with plenty of rich spice and mineral accents. Touches of slate and cardamom make for a complex finish. Drink now through 2023. 3,170 cases made. —KM</td>
+        <td>2014</td>
+        <td>$98 </td>
+        <td align="right">95.0</td>
+        <td align="right">3</td>
+        </tr>
+        <tr>
+        <td align="right">1</td>
+        <td>K Syrah Walla Walla Valley Powerline Estate-</td>
+        <td>A knockout Syrah, precise and impeccably built but explosive with personality. Smoky roasted meat and floral blackberry aromas combine with bold, supple flavors of dark plum, pepper and licorice. The tannins are big but polished. Drink now through 2024. 1,319 cases made. —TF</td>
+        <td>2014</td>
+        <td>$45 </td>
+        <td align="right">95.0</td>
+        <td align="right">3</td>
+        </tr>
+        <tr>
+        <td align="right">2</td>
+        <td>Château Coutet Barsac-</td>
+        <td>This shows the vivid, racy side of Barsac, with streaming flavors of pineapple, yellow apple, green plum and white ginger, displaying lovely energy from start to finish. Ends with enough honeysuckle and orange blossom notes to balance the richness. Best from 2020 through 2035. 4,000 cases made. —JM</td>
+        <td>2014</td>
+        <td>$37 </td>
+        <td align="right">96.0</td>
+        <td align="right">3</td>
+        </tr>
+        <tr>
+        <td align="right">3</td>
+        <td>Casanova di Neri Brunello di Montalcino-</td>
+        <td>Effusive aromas and flavors of raspberry, cherry, floral, mineral and tobacco are at the center of this linear, vibrant red. Well-structured, this offers terrific length on the sinewy finish. Best from 2020 through 2035. 6,054 cases made. —BS</td>
+        <td>2012</td>
+        <td>$65 </td>
+        <td align="right">95.0</td>
+        <td align="right">3</td>
+        </tr>
+        <tr>
+        <td align="right">4</td>
+        <td>Château de St.-Cosme Gigondas-</td>
+        <td>A textbook version of the brawny side of Gigondas, this offers a grippy alder bass line underneath layers of dark currant and fig fruit, while lots of tobacco, rosemary and bay leaf fill in throughout. Muscular and energetic, this is built for the cellar. Best from 2019 through 2030. 4,000 cases made. —JM</td>
+        <td>2015</td>
+        <td>$43 </td>
+        <td align="right">95.0</td>
+        <td align="right">4</td>
+        </tr>
+        <tr>
+        <td align="right">5</td>
+        <td>Domaine Huët Vouvray Demi-Sec Le Mont-</td>
+        <td>This tilts toward the flattering side of off-dry, showing a plump feel to the core of creamed pear, white peach and yellow apple fruit. Lovely verbena, honeysuckle and mineral accents keep this balanced and driven, with a long finish that lets the fruit echo. Drink now through 2032. 2,000 cases made. —JM</td>
+        <td>2016</td>
+        <td>$44 </td>
+        <td align="right">95.0</td>
+        <td align="right">4</td>
+        </tr>
+        <tr>
+        <td align="right">6</td>
+        <td>Château Canon-La Gaffelière St.-Emilion-</td>
+        <td>This cuts a wide swath, with mouthwatering tobacco and warm ganache notes leading the way, followed by a wave of fig, blackberry and black currant preserves. Shows remarkable definition already, even though the structure is strident. Tempting now, but just put this in the back of the cellar. Best from 2020 through 2035. 4,083 cases made. —JM</td>
+        <td>2014</td>
+        <td>$61 </td>
+        <td align="right">95.0</td>
+        <td align="right">4</td>
+        </tr>
+        <tr>
+        <td align="right">7</td>
+        <td>Meyer Cabernet Sauvignon Napa Valley-</td>
+        <td>Strikingly complex and detailed, with supple, harmonious blackberry, currant, anise, licorice and crushed rock flavors. Gains depth while holding focus and persistence. Drink now through 2032. 1,200 cases made. —JL</td>
+        <td>2014</td>
+        <td>$70 </td>
+        <td align="right">95.0</td>
+        <td align="right">4</td>
+        </tr>
+        <tr>
+        <td align="right">8</td>
+        <td>Pahlmeyer Chardonnay Napa Valley-</td>
+        <td>This offers a gorgeous mouthful of rich, buttery Chardonnay, loaded with exotic tropical fruit, pear, melon and pineapple flavors. Impressive for its opulence and silkiness, a nice combination. Drink now through 2022. 2,500 cases made. —JL</td>
+        <td>2015</td>
+        <td>$75 </td>
+        <td align="right">95.0</td>
+        <td align="right">4</td>
+        </tr>
+        <tr>
+        <td align="right">9</td>
+        <td>Booker Oublié Paso Robles-</td>
+        <td>Expressive and impressively structured, with savory blackberry aromas and accents of rosemary, thyme and crushed stone, opening to complex, densely layered flavors of currant, pepper and espresso. Grenache, Mourvèdre and Counoise. Best from 2018 through 2028. 1,500 cases made. —TF</td>
+        <td>2014</td>
+        <td>$80 </td>
+        <td align="right">95.0</td>
+        <td align="right">4</td>
+        </tr>
+        <tr>
+        <td align="right">10</td>
+        <td>Altesino Brunello di Montalcino Our 40th Harvest-</td>
+        <td>Cherry, leather and iron notes mark this suave, elegant red. A bit reticent now, but the fruit is fresh and long on the finish. The dense tannins leave a mouthcoating impression, but this opens up beautifully over a few hours. Best from 2021 through 2035. 10,000 cases made. —BS</td>
+        <td>2012</td>
+        <td>$65 </td>
+        <td align="right">96.0</td>
+        <td align="right">4</td>
+        </tr>
+        <tr>
+        <td align="right">11</td>
+        <td>Bedrock Zinfandel California Old Vine-</td>
+        <td>Rich and supple, this is an explosion of pure, decadent fruit. Floral huckleberry and Chinese five-spice powder aromas open to layered blackberry, dark chocolate and licorice flavors that linger. Drink now through 2026. 4,500 cases made. —TF</td>
+        <td>2015</td>
+        <td>$25 </td>
+        <td align="right">93.0</td>
+        <td align="right">4</td>
+        </tr>
+        <tr>
+        <td align="right">12</td>
+        <td>Sixto Chardonnay Washington Uncovered-</td>
+        <td>Dynamic, yet sleek and refined, driven by a core of minerally acidity that meshes with the delicately complex apple, Meyer lemon and spicy yeast accents that linger long on the finish. Drink now through 2021. 1,835 cases made. —TF</td>
+        <td>2014</td>
+        <td>$35 </td>
+        <td align="right">94.0</td>
+        <td align="right">4</td>
+        </tr>
+        <tr>
+        <td align="right">13</td>
+        <td>Clos des Papes Châteauneuf-du-Pape-</td>
+        <td>This offers a drop-dead gorgeous core of cassis and raspberry pâte de fruit flavors that hold center stage but still allow notes of Lapsang souchong tea, anise, incense and shiso leaf to chime in. Very long, with a sublime feel through the mineral-tinged finish. So seductive already, but this should cruise in the cellar. Drink now through 2040. 6,000 cases made. —JM</td>
+        <td>2015</td>
+        <td>$109 </td>
+        <td align="right">98.0</td>
+        <td align="right">4</td>
+        </tr>
+        <tr>
+        <td align="right">14</td>
+        <td>Domaine des Baumard Savennières-</td>
+        <td>Alluring, with quince, creamed pear, verbena and green almond flavors allied to a creamy texture, all offset beautifully through the finish by light quinine and mineral hints. Approachable, but this seems built for the cellar. Best from 2018 through 2030. 1,500 cases imported. —JM</td>
+        <td>2015</td>
+        <td>$30 </td>
+        <td align="right">94.0</td>
+        <td align="right">4</td>
+        </tr>
+        <tr>
+        <td align="right">15</td>
+        <td>Turley Zinfandel Paso Robles Ueberroth Vineyard-</td>
+        <td>An impressive combo of refinement and torque. This features ripe, rich fruit backed by great minerality and structure, with notes of raspberry and blackberry plus licorice, sage and pepper. Drink now through 2028. 1,380 cases made. —TF</td>
+        <td>2014</td>
+        <td>$48 </td>
+        <td align="right">95.0</td>
+        <td align="right">4</td>
+        </tr>
+        <tr>
+        <td align="right">16</td>
+        <td>Volver Alicante Tarima Hill Old Vines-</td>
+        <td>This red shows grace and depth. Black cherry, plum, mineral and smoke flavors mingle harmoniously over well-integrated tannins, while lively acidity keeps this focused. Not showy, but all the pieces fit together. Balanced, in the modern style. Drink now through 2025. 10,000 cases made. —TM</td>
+        <td>2015</td>
+        <td>$17 </td>
+        <td align="right">92.0</td>
+        <td align="right">4</td>
+        </tr>
+        <tr>
+        <td align="right">17</td>
+        <td>Bodega Colomé Malbec Salta-</td>
+        <td>Refined and rich-tasting, with effusive minerality to the red berry and cherry flavors, lathered with plenty of creamy accents. Pepper and cigar box notes show on the long and complex finish. Drink now through 2022. 27,300 cases made. —KM</td>
+        <td>2015</td>
+        <td>$25 </td>
+        <td align="right">92.0</td>
+        <td align="right">4</td>
+        </tr>
+        <tr>
+        <td align="right">18</td>
+        <td>Marqués de Cáceres Rioja Reserva-</td>
+        <td>Black cherry, currant and floral notes are expressive and alluring, balanced by loamy earth, tobacco and mineral elements that add a savory quality. Firm, well-integrated tannins give support to the polished texture, while orange peel acidity fuels the fresh finish. Drink now through 2027. 10,000 cases imported. —TM</td>
+        <td>2012</td>
+        <td>$31 </td>
+        <td align="right">93.0</td>
+        <td align="right">3</td>
+        </tr>
+        <tr>
+        <td align="right">19</td>
+        <td>San Felice Brunello di Montalcino Campogiovanni-</td>
+        <td>In a traditional style, featuring beefy tannins and savory earth notes, with a core of leather and cherry flavors. Shows some sweetness midpalate and picks up energy on the long finish. Hangs together, ending in an uplifting, resonant manner. Best from 2021 through 2036. 5,833 cases made. —BS</td>
+        <td>2012</td>
+        <td>$60 </td>
+        <td align="right">96.0</td>
+        <td align="right">3</td>
+        </tr>
+        <tr>
+        <td align="right">20</td>
+        <td>Hartford Family Zinfandel Russian River Valley Old Vine-</td>
+        <td>This is what Russian River Zinfandel is all about. Rich, dynamic and layered, with complex fruit, offering notes of jammy black raspberry, stony mineral, herbes de Provence and licorice. The finish unfurls at length. Drink now through 2026. 1,700 cases made. —TF</td>
+        <td>2015</td>
+        <td>$38 </td>
+        <td align="right">94.0</td>
+        <td align="right">4</td>
+        </tr>
+        <tr>
+        <td align="right">21</td>
+        <td>Saxum James Berry Vineyard Paso Robles Willow Creek District-</td>
+        <td>A dramatic wine that weds power and opulence, maintaining impeccable balance along the way. Brooding dark berry and loamy mineral aromas lead to rich flavors of currant, licorice, dried sage and smoky pepper. Ripe tannins frame the finish. Grenache, Mourvèdre, Syrah, Counoise and Roussanne. Best from 2018 through 2028. 1,400 cases made. —TF</td>
+        <td>2014</td>
+        <td>$98 </td>
+        <td align="right">97.0</td>
+        <td align="right">4</td>
+        </tr>
+        <tr>
+        <td align="right">22</td>
+        <td>Mazzei Maremma Toscana Tenuta Belguardo-</td>
+        <td>A red of great purity and polish, offering black cherry, blackberry, spice and herb flavors, this evokes tobacco, graphite and leather nuances as it builds nicely on the palate. Finishes with grip, harmony and complexity, as well as terrific length. Cabernet Sauvignon and Cabernet Franc. Drink now through 2028. 1,083 cases made. —BS</td>
+        <td>2013</td>
+        <td>$55 </td>
+        <td align="right">95.0</td>
+        <td align="right">4</td>
+        </tr>
+        <tr>
+        <td align="right">23</td>
+        <td>Justin Justification Paso Robles-</td>
+        <td>Smooth-textured, graceful and refined, with a tenderness to the texture and tannins. Features a warm, inviting mix of red and dark berry flavors and subtle shades of licorice, light mocha and savory herbs, revealing floral scents and a long, persistent finish that echoes the core essence. Cabernet Franc and Merlot. Drink now through 2035. 11,000 cases made. —JL</td>
+        <td>2014</td>
+        <td>$50 </td>
+        <td align="right">94.0</td>
+        <td align="right">4</td>
+        </tr>
+        <tr>
+        <td align="right">24</td>
+        <td>Roederer Estate Brut Anderson Valley-</td>
+        <td>A voluptuous and expressive sparkler, with floral red apple, brioche and cinnamon spice aromas and rich, vibrant flavors that finish on a luxurious note. Drink now through 2018. 80,000 cases made. —TF</td>
+        <td>NV</td>
+        <td>$24 </td>
+        <td align="right">92.0</td>
+        <td align="right">3</td>
+        </tr>
+        <tr>
+        <td align="right">25</td>
+        <td>Tablas Creek Patelin de Tablas Blanc Paso Robles-</td>
+        <td>This vibrant and mouthwatering white shows green apple, Meyer lemon and dried pineapple flavors that are fresh and juicy. Lemon verbena and lime sherbet notes reverberate on the long, detailed finish. Grenache Blanc, Viognier, Roussanne and Marsanne. Drink now. 2,920 cases made. —MW</td>
+        <td>2015</td>
+        <td>$25 </td>
+        <td align="right">93.0</td>
+        <td align="right">3</td>
+        </tr>
+        <tr>
+        <td align="right">26</td>
+        <td>Bodegas Alto Moncayo Garnacha Campo de Borja Veraton-</td>
+        <td>Expressive flavors of cherry, raspberry and dark chocolate mingle in this polished red, balanced by notes of licorice and wild herbs. The tannins are well-integrated, and balsamic acidity keeps this balanced. Dense and harmonious, in the modern style. Drink now through 2022. 3,000 cases made. —TM</td>
+        <td>2014</td>
+        <td>$30 </td>
+        <td align="right">92.0</td>
+        <td align="right">3</td>
+        </tr>
+        <tr>
+        <td align="right">27</td>
+        <td>Kendall-Jackson Chardonnay California Vintner&#39;s Reserve-</td>
+        <td>Plush, with loads of richness to the well-honed flavors of beeswax, baked pear and lemon tart. Minerally midpalate, with a fresh and zesty finish that finishes with pastry notes. Drink now through 2020. 100,000 cases made. —KM</td>
+        <td>2015</td>
+        <td>$17 </td>
+        <td align="right">91.0</td>
+        <td align="right">3</td>
+        </tr>
+        <tr>
+        <td align="right">28</td>
+        <td>Viña Santa Ema Cabernet Sauvignon Maipo Valley Reserva-</td>
+        <td>Dark plum and dried red berry flavors dominate this muscular red, with plenty of minty and savory accents. Medium-grained tannins support chocolate and cream details on the finish. Drink now through 2021. 25,000 cases made. —KM</td>
+        <td>2015</td>
+        <td>$15 </td>
+        <td align="right">91.0</td>
+        <td align="right">3</td>
+        </tr>
+        <tr>
+        <td align="right">29</td>
+        <td>Hijos de Rainera Perez Marin Manzanilla Sanlúcar de Barrameda La Guita-</td>
+        <td>Distinctive, with verbena and tarragon notes leading the way, followed by lemon pith and jicama flavors. Flashes of gooseberry and talc run through the finish. Bottled June 2016. Drink now. 200,000 cases made. —JM</td>
+        <td>NV</td>
+        <td>$15 </td>
+        <td align="right">91.0</td>
+        <td align="right">3</td>
+        </tr>
+        <tr>
+        <td align="right">30</td>
+        <td>Forge Riesling Finger Lakes Classique-</td>
+        <td>Weighty for a Riesling, with a rounded feel and layers of creamed yellow apple, white peach and persimmon flavors. Delivers energy and cut throughout, with lemon pith, citrus oil and chamomile accents filling in. Shows length and range through the finish. Drink now through 2021. 1,800 cases made. —JM</td>
+        <td>2015</td>
+        <td>$19 </td>
+        <td align="right">92.0</td>
+        <td align="right">3</td>
+        </tr>
+        <tr>
+        <td align="right">31</td>
+        <td>Sidebar Sauvignon Blanc High Valley-</td>
+        <td>Focused and precise, with detailed lemon meringue, orange blossom and lime zest flavors that are intense, fragrant and harmonious on the long, crisp finish. Drink now. 2,198 cases made. —MW</td>
+        <td>2015</td>
+        <td>$20 </td>
+        <td align="right">91.0</td>
+        <td align="right">3</td>
+        </tr>
+        <tr>
+        <td align="right">32</td>
+        <td>Jim Barry Riesling Clare Valley The Lodge Hill Dry-</td>
+        <td>A taut and linear white, with a lip-smacking blend of peach, lime and green apple flavors, finishing on a refreshing note. Drink now. 3,000 cases imported. —MW</td>
+        <td>2016</td>
+        <td>$20 </td>
+        <td align="right">91.0</td>
+        <td align="right">3</td>
+        </tr>
+        <tr>
+        <td align="right">33</td>
+        <td>Finca Decero Malbec Agrelo Remolinos Vineyard-</td>
+        <td>An elegant style, with a core of vibrant cherry, plum and currant flavors that are supported by fresh acidity. This is supple midpalate, with a finish that lingers with dried ginger and white pepper details. Drink now through 2022. 18,000 cases imported. —KM</td>
+        <td>2015</td>
+        <td>$22 </td>
+        <td align="right">91.0</td>
+        <td align="right">3</td>
+        </tr>
+        <tr>
+        <td align="right">34</td>
+        <td>Pazo de Señorans Albariño Rias Baixas-</td>
+        <td>This big white is round and polished, with good weight and solid acidity behind the pear, blanched almond and white tea flavors. Ginger and briny notes give this a savory character. A muscular style. Drink now through 2022. 3,000 cases imported. —TM</td>
+        <td>2016</td>
+        <td>$21 </td>
+        <td align="right">91.0</td>
+        <td align="right">3</td>
+        </tr>
+        <tr>
+        <td align="right">35</td>
+        <td>Tait The Ball Buster Barossa Valley-</td>
+        <td>Bold, with dense notes of dark chocolate-covered coffee bean, plum paste, wild blackberry, cigar box and date bread. Expressive and generous. The velvety tannins linger. Shiraz, Cabernet Sauvignon and Merlot. Drink now through 2027. 8,500 cases made. —MW</td>
+        <td>2014</td>
+        <td>$23 </td>
+        <td align="right">91.0</td>
+        <td align="right">4</td>
+        </tr>
+        <tr>
+        <td align="right">36</td>
+        <td>Karine Lauverjat Sancerre-</td>
+        <td>Crunchy, with lots of gooseberry and thyme notes bouncing around, while flint and fleur de sel accents drive the mouthwatering finish. Drink now through 2020. 3,125 cases imported. —JM</td>
+        <td>2016</td>
+        <td>$23 </td>
+        <td align="right">91.0</td>
+        <td align="right">3</td>
+        </tr>
+        <tr>
+        <td align="right">37</td>
+        <td>Luigi Einaudi Dogliani-</td>
+        <td>A beam of bracing acidity at the core of this intense, saturated red helps delineate the blackberry, boysenberry, blueberry and graphite flavors. This has grip and complexity, but just needs a little time. Best from 2018 through 2024. 9,000 cases made. —BS</td>
+        <td>2015</td>
+        <td>$16 </td>
+        <td align="right">92.0</td>
+        <td align="right">3</td>
+        </tr>
+        <tr>
+        <td align="right">38</td>
+        <td>Spring Valley Frederick Walla Walla Valley-</td>
+        <td>Refined and impeccably structured, with floral black cherry and dusty dried spice aromas, and complex plum, olive and mocha flavors that glide toward polished tannins. Cabernet Sauvignon, Cabernet Franc, Merlot, Petit Verdot and Malbec. Drink now through 2023. 2,966 cases made. —TF</td>
+        <td>2014</td>
+        <td>$50 </td>
+        <td align="right">94.0</td>
+        <td align="right">4</td>
+        </tr>
+        <tr>
+        <td align="right">39</td>
+        <td>Matua Sauvignon Blanc Marlborough-</td>
+        <td>Succulent, fleshy peach and nectarine flavors are accented by Key lime, mango and ruby grapefruit notes. Shows nice intensity on the long, expressive finish. Drink now. 589,000 cases made. —MW</td>
+        <td>2016</td>
+        <td>$12 </td>
+        <td align="right">90.0</td>
+        <td align="right">3</td>
+        </tr>
+        <tr>
+        <td align="right">40</td>
+        <td>Bodega Garzón Tannat Uruguay Reserva-</td>
+        <td>Well-sculpted, with dense, rich flavors of dark plum, dried blackberry and dark currant that are supported by firm tannins. Christmas pudding and rich savory notes show on the finish. Drink now through 2022. 12,000 cases made. —KM</td>
+        <td>2015</td>
+        <td>$17 </td>
+        <td align="right">90.0</td>
+        <td align="right">3</td>
+        </tr>
+        <tr>
+        <td align="right">41</td>
+        <td>Colene Clemens Pinot Noir Chehalem Mountains Dopp Creek-</td>
+        <td>Firm and focused, with cinnamon notes floating around red berry and floral flavors, finishing with gentle persistence against lively acidity and fine tannins. Best from 2018 through 2022. 3,100 cases made. —HS</td>
+        <td>2014</td>
+        <td>$26 </td>
+        <td align="right">91.0</td>
+        <td align="right">3</td>
+        </tr>
+        <tr>
+        <td align="right">42</td>
+        <td>J.-A. Ferret Pouilly-Fuissé-</td>
+        <td>A sleek, stony version, this white exhibits lime blossom, apple, mineral and subtle spice flavors. Energetic, resonating on the long, citrus- and mineral-infused aftertaste. Drink now through 2024. 4,500 cases made. —BS</td>
+        <td>2015</td>
+        <td>$35 </td>
+        <td align="right">92.0</td>
+        <td align="right">4</td>
+        </tr>
+        <tr>
+        <td align="right">43</td>
+        <td>Domaine St.-Préfert Châteauneuf-du-Pape Auguste Favier Réserve-</td>
+        <td>Vibrant and captivating, with exuberant fruitcake, cinnamon and black tea aromas leading the way for a fleshy core of raspberry pâte de fruit, plum sauce and cassis, all allied to a lovely velvety texture. Maintains intensity through the finish, showing a long echo of pastis. Best from 2020 through 2040. 1,300 cases made. —JM</td>
+        <td>2015</td>
+        <td>$55 </td>
+        <td align="right">97.0</td>
+        <td align="right">4</td>
+        </tr>
+        <tr>
+        <td align="right">44</td>
+        <td>Kaiken Malbec Mendoza Ultra Las Rocas-</td>
+        <td>Dense and rich-tasting, with a muscular mix of dark currant and black olive flavors that are supported by firm tannins. Cocoa powder and slate notes fill the finish, along with peppery hints. Drink now through 2022. 10,000 cases made. —KM</td>
+        <td>2015</td>
+        <td>$20 </td>
+        <td align="right">90.0</td>
+        <td align="right">3</td>
+        </tr>
+        <tr>
+        <td align="right">45</td>
+        <td>Il Poggione Rosso di Montalcino-</td>
+        <td>Bright, delicate and vibrant, with berry and floral flavors. Accents of earth, tobacco and spice add interest as they linger on the finish. Well-rounded and long. Drink now through 2023. 16,666 cases made. —BS</td>
+        <td>2015</td>
+        <td>$27 </td>
+        <td align="right">91.0</td>
+        <td align="right">3</td>
+        </tr>
+        <tr>
+        <td align="right">46</td>
+        <td>Bodegas Palacios Remondo Rioja La Vendimia-</td>
+        <td>This red shows good density, with black cherry, plum, espresso and black olive flavors mingling over firm tannins and balsamic acidity. Stays balanced and focused through the smoky finish. Drink now through 2027. 3,552 cases imported. —TM</td>
+        <td>2015</td>
+        <td>$17 </td>
+        <td align="right">90.0</td>
+        <td align="right">3</td>
+        </tr>
+        <tr>
+        <td align="right">47</td>
+        <td>Penley Cabernet Sauvignon Coonawarra Phoenix-</td>
+        <td>Dense tannins and flavors are packed into this wine, with briny Kalamata olive and black licorice nuances to the core of plum, cassis, sage, tobacco and cedar flavors, which fan out on the finish. Drink now through 2030. 4,300 cases imported. —MW</td>
+        <td>2015</td>
+        <td>$20 </td>
+        <td align="right">90.0</td>
+        <td align="right">3</td>
+        </tr>
+        <tr>
+        <td align="right">48</td>
+        <td>Rust en Vrede Syrah Stellenbosch-</td>
+        <td>This is well-rendered, with a core of bramble-edged boysenberry, blackberry and raspberry fruit laced with mouthwatering savory and anise notes. Shows judicious toast through the finish, as roasted apple wood details dance through, letting the fruit win out in the end. Drink now through 2024. 3,540 cases made. —JM</td>
+        <td>2014</td>
+        <td>$29 </td>
+        <td align="right">92.0</td>
+        <td align="right">3</td>
+        </tr>
+        <tr>
+        <td align="right">49</td>
+        <td>Quinta das Carvalhas Touriga Nacional Douro-</td>
+        <td>Supple but tightly knit, this focused red offers blackberry and currant fruit woven together with black olive, anise and grilled herb accents. Black tea and mineral notes chime in on the firm finish. Drink now through 2022. 7,500 cases made. —GS</td>
+        <td>2014</td>
+        <td>$22 </td>
+        <td align="right">90.0</td>
+        <td align="right">3</td>
+        </tr>
+        <tr>
+        <td align="right">50</td>
+        <td>Bodegas y Viñedos Raúl Pérez Mencía Bierzo Ultreia St.-Jacques-</td>
+        <td>Smoke, forest floor and mineral notes mingle in this savory red. Lively acidity and light, firm tannins give grip to the polished texture. Cherry and floral accents sing through the finish. Energetic. Drink now through 2023. 1,200 cases imported. —TM</td>
+        <td>2015</td>
+        <td>$20 </td>
+        <td align="right">91.0</td>
+        <td align="right">3</td>
+        </tr>
+        <tr>
+        <td align="right">51</td>
+        <td>Domaine de Mourchon Côtes du Rhône-Villages Séguret Tradition-</td>
+        <td>A good bolt of graphite drives underneath while lightly mulled plum and blackberry fruit form the core. Singed mesquite and tobacco fill in on the finish. Grenache, Syrah and Carignan. Drink now through 2020. 3,500 cases made. —JM</td>
+        <td>2014</td>
+        <td>$20 </td>
+        <td align="right">90.0</td>
+        <td align="right">3</td>
+        </tr>
+        <tr>
+        <td align="right">52</td>
+        <td>PlumpJack Syrah Napa Valley-</td>
+        <td>Polished and impeccably structured, with blackberry and smoky meat aromas and layered, rich flavors of licorice and espresso that linger toward big but firm tannins. Drink now through 2027. 1,124 cases made. —TF</td>
+        <td>2014</td>
+        <td>$60 </td>
+        <td align="right">94.0</td>
+        <td align="right">3</td>
+        </tr>
+        <tr>
+        <td align="right">53</td>
+        <td>Innocent Bystander Pinot Noir Yarra Valley-</td>
+        <td>Plush and elegant, with raspberry, cherry and fresh sage notes that are harmonious, juicy and intense on the finish. Drink now through 2027. 1,900 cases imported. —MW</td>
+        <td>2016</td>
+        <td>$20 </td>
+        <td align="right">90.0</td>
+        <td align="right">3</td>
+        </tr>
+        <tr>
+        <td align="right">54</td>
+        <td>Trimbach Pinot Gris Alsace Réserve Personnelle-</td>
+        <td>A mouthwatering Pinot Gris, with exotic notes of papaya and grated coconut accenting the peach, anise and almond blossom flavors. Sleek acidity focuses this through to the spicy, mineral-tinged finish. Drink now through 2029. 1,500 cases imported. —AN</td>
+        <td>2015</td>
+        <td>$38 </td>
+        <td align="right">92.0</td>
+        <td align="right">3</td>
+        </tr>
+        <tr>
+        <td align="right">55</td>
+        <td>Domaines Dominique Piron Morgon La Chanaise-</td>
+        <td>This ripe, light- to medium-bodied red sports layers of pure blackberry, cassis and damson plum, edged with licorice, floral and apricot details. Tangy, mouthwatering acidity highlights the mineral and spice details on the long, lightly grippy finish. Drink now through 2020. 13,000 cases made. —GS</td>
+        <td>2015</td>
+        <td>$20 </td>
+        <td align="right">91.0</td>
+        <td align="right">4</td>
+        </tr>
+        <tr>
+        <td align="right">56</td>
+        <td>Mason Sauvignon Blanc Napa Valley Yount Mill Vineyard-</td>
+        <td>Clean, smooth and crisp, offering a lip-smacking mix of pear, melon and Key lime flavors, with plenty of intensity on the finish. Drink now. 4,900 cases made. —MW</td>
+        <td>2016</td>
+        <td>$19 </td>
+        <td align="right">90.0</td>
+        <td align="right">3</td>
+        </tr>
+        <tr>
+        <td align="right">57</td>
+        <td>Domaine de Beaurenard Châteauneuf-du-Pape-</td>
+        <td>A beautiful wine, with dark fig, warm boysenberry reduction and alluring creamed raspberry flavors streaming forth, accented by graphite, black tea and pastis. There&#39;s a healthy dose of singed apple wood through the finish, but it&#39;s well-embedded as everything pulls together. Best from 2020 through 2040. 5,500 cases made. —JM</td>
+        <td>2015</td>
+        <td>$55 </td>
+        <td align="right">94.0</td>
+        <td align="right">4</td>
+        </tr>
+        <tr>
+        <td align="right">58</td>
+        <td>Bodegas Emilio Moro Tempranillo Ribera del Duero-</td>
+        <td>Black cherry, red plum and currant flavors are fresh and lively in this firm red, backed by dark chocolate, licorice and toasty notes. Light, firm tannins and citrusy acidity keep this focused. Drink now through 2023. 58,333 cases made. —TM</td>
+        <td>2015</td>
+        <td>$24 </td>
+        <td align="right">90.0</td>
+        <td align="right">3</td>
+        </tr>
+        <tr>
+        <td align="right">59</td>
+        <td>Casa Santos Lima Lisboa Colossal Reserva-</td>
+        <td>Plum and boysenberry notes weave together with dried herb and smoky mineral accents in this sleek red. Savory spice details chime in on the finish. Offers moderate, grippy tannins. Drink now through 2020. 55,000 cases made. —GS</td>
+        <td>2015</td>
+        <td>$25 </td>
+        <td align="right">90.0</td>
+        <td align="right">3</td>
+        </tr>
+        <tr>
+        <td align="right">60</td>
+        <td>Cantina del Pino Barbaresco Ovello-</td>
+        <td>This pretty red offers delicate flavors and subtle power, evoking flowers, red berry, mineral, tobacco and tar on the nose and palate. Firmly structured, this remains harmonious and long on the mineral- and tobacco-tinged finish. Best from 2020 through 2036. 500 cases made. —BS</td>
+        <td>2013</td>
+        <td>$62 </td>
+        <td align="right">97.0</td>
+        <td align="right">3</td>
+        </tr>
+        <tr>
+        <td align="right">61</td>
+        <td>Clos Fourtet St.-Emilion-</td>
+        <td>A sleek, lean cat, with distilled currant and raspberry fruit that races from start to finish, maintaining tension throughout thanks to a riveting chalky spine. A light floral hint hangs in the background. Should develop into a perfumy beauty with time. Best from 2022 through 2035. 3,167 cases made. —JM</td>
+        <td>2014</td>
+        <td>$74 </td>
+        <td align="right">95.0</td>
+        <td align="right">4</td>
+        </tr>
+        <tr>
+        <td align="right">62</td>
+        <td>Purple Hands Pinot Noir Dundee Hills Latchkey Vineyard-</td>
+        <td>Silky and harmonious, with an elegantly precise structure and black cherry, fresh violet and spice notes that glide expressively toward the long finish. Drink now through 2022. 600 cases made. —TF</td>
+        <td>2015</td>
+        <td>$50 </td>
+        <td align="right">94.0</td>
+        <td align="right">3</td>
+        </tr>
+        <tr>
+        <td align="right">63</td>
+        <td>Jean-Luc Colombo Cornas Terres Brûlées-</td>
+        <td>Plush in feel, with layers of dark fig, blueberry and blackberry reduction leading the way, inlaid with light charcoal and bay leaf accents that emerge steadily through the finish. Ends with a tug of tar. Best from 2020 through 2035. 1,300 cases made. —JM</td>
+        <td>2015</td>
+        <td>$58 </td>
+        <td align="right">94.0</td>
+        <td align="right">3</td>
+        </tr>
+        <tr>
+        <td align="right">64</td>
+        <td>Greywacke Pinot Noir Marlborough-</td>
+        <td>Detailed, with notes of dried lavender, white pepper, fresh loamy earth and black tea set against a core of strawberry and raspberry flavors. Smooth and plush, this becomes even more expressive on the finish, where spice details fan out. Drink now through 2025. 750 cases imported. —MW</td>
+        <td>2014</td>
+        <td>$39 </td>
+        <td align="right">93.0</td>
+        <td align="right">3</td>
+        </tr>
+        <tr>
+        <td align="right">65</td>
+        <td>Scacciadiavoli Montefalco Sagrantino-</td>
+        <td>This finely balanced Sagrantino layers creamy tannins with a pretty array of raspberry ganache, fig cake and dried sage flavors, accented by aromatic hints of rose petal and spice. Elegant and lightly juicy, with a subtle mineral streak that gains momentum on the finish. Drink now through 2027. 4,000 cases made. —AN</td>
+        <td>2011</td>
+        <td>$40 </td>
+        <td align="right">92.0</td>
+        <td align="right">3</td>
+        </tr>
+        <tr>
+        <td align="right">66</td>
+        <td>The Calling Chardonnay Russian River Valley Dutton Ranch-</td>
+        <td>Ultrarich and extracted, offering a firm core of pear, apple, melon and spice flavors. A truly impressive effort, with depth and dimension. Drink now through 2022. 7,000 cases made. —JL</td>
+        <td>2015</td>
+        <td>$32 </td>
+        <td align="right">91.0</td>
+        <td align="right">3</td>
+        </tr>
+        <tr>
+        <td align="right">67</td>
+        <td>Gorman Zachary&#39;s Ladder Red Mountain-</td>
+        <td>Rich yet densely structured, with expressive black cherry and blueberry fruit, accented by smoky licorice and finishing with big but refined tannins. Cabernet Sauvignon, Syrah and Petit Verdot. Best from 2019 through 2025. 600 cases made. —TF</td>
+        <td>2014</td>
+        <td>$30 </td>
+        <td align="right">92.0</td>
+        <td align="right">4</td>
+        </tr>
+        <tr>
+        <td align="right">68</td>
+        <td>Gini Soave Classico-</td>
+        <td>A lithe, light-bodied white, with racy acidity and a subtle streak of mineral, layered with nectarine, melon and pink grapefruit pith flavors. This is well-knit, with a lingering, lightly spiced finish. Drink now through 2020. 9,000 cases made. —AN</td>
+        <td>2016</td>
+        <td>$21 </td>
+        <td align="right">90.0</td>
+        <td align="right">3</td>
+        </tr>
+        <tr>
+        <td align="right">69</td>
+        <td>Lingua Franca Pinot Noir Eola-Amity Hills Tongue &#39;N Cheek-</td>
+        <td>Lithe and delicately complex, offering rose petal and tart blueberry aromas, with effortlessly balanced raspberry, river rock and spice flavors that finish with refined tannins. Drink now through 2022. 594 cases made. —TF</td>
+        <td>2015</td>
+        <td>$60 </td>
+        <td align="right">94.0</td>
+        <td align="right">3</td>
+        </tr>
+        <tr>
+        <td align="right">70</td>
+        <td>Donnachiara Aglianico Irpinia-</td>
+        <td>This is elegant and well-meshed, with fine tannins and a fragrant skein of ground spice layered with flavors of baked black currant, herbes de Provence, smoke and fig cake. The fresh finish is chewy and lingering. Drink now through 2022. 2,083 cases made. —AN</td>
+        <td>2015</td>
+        <td>$18 </td>
+        <td align="right">90.0</td>
+        <td align="right">3</td>
+        </tr>
+        <tr>
+        <td align="right">71</td>
+        <td>Domaine Petroni Corse-</td>
+        <td>Lightly rustic, with bramble and dried anise notes weaving throughout. The core of violet plum sauce and raspberry coulis is pure and vibrant, extending through a lengthy finish. A fun, character-filled wine. Niellucciu, Syrah and Grenache. Drink now through 2019. 6,500 cases made. —JM</td>
+        <td>2015</td>
+        <td>$20 </td>
+        <td align="right">90.0</td>
+        <td align="right">3</td>
+        </tr>
+        <tr>
+        <td align="right">72</td>
+        <td>Powell &amp; Son Riverside Barossa-</td>
+        <td>A supple, seamless mix of cherry and raspberry flavors, with dried violet, savory and smoky details, accented by hints of sarsaparilla. Polished and refined, especially on the effortless finish. Grenache, Mataro and Shiraz. Drink now through 2030. 2,000 cases made. —MW</td>
+        <td>2015</td>
+        <td>$20 </td>
+        <td align="right">93.0</td>
+        <td align="right">3</td>
+        </tr>
+        <tr>
+        <td align="right">73</td>
+        <td>Domaine de la Solitude Châteauneuf-du-Pape White-</td>
+        <td>This is dreamy, with creamed melon, pear and green fig flavors gliding along, framed by light brioche and meringue notes. The long finish lets the fruit hang beautifully. Offers refined opulence. Drink now through 2022. 800 cases made. —JM</td>
+        <td>2016</td>
+        <td>$50 </td>
+        <td align="right">95.0</td>
+        <td align="right">4</td>
+        </tr>
+        <tr>
+        <td align="right">74</td>
+        <td>Résonance Pinot Noir Willamette Valley-</td>
+        <td>Supple and elegantly structured, with expressive raspberry and orange zest aromas and polished flavors that pick up depth and momentum toward a spicy finish framed by refined tannins. Drink now through 2023. 4,000 cases made. —TF</td>
+        <td>2015</td>
+        <td>$45 </td>
+        <td align="right">93.0</td>
+        <td align="right">3</td>
+        </tr>
+        <tr>
+        <td align="right">75</td>
+        <td>Louis Chèze Condrieu Pagus Luminis-</td>
+        <td>This has power, with a large core of creamed peach, nectarine and yellow apple fruit. Lengthy, pure and vibrant, with a mineral streak running underneath and chamomile and honeysuckle notes gilding the finish. Dreamy wine. Drink now through 2022. 1,200 cases made. —JM</td>
+        <td>2015</td>
+        <td>$69 </td>
+        <td align="right">96.0</td>
+        <td align="right">3</td>
+        </tr>
+        <tr>
+        <td align="right">76</td>
+        <td>Oberon Merlot Napa Valley-</td>
+        <td>A robust style, with inky notes to the dark currant, dried sage and fig flavors that glide across the palate. The sanguine finish is richly spiced. Drink now through 2020. 4,000 cases made. —KM</td>
+        <td>2015</td>
+        <td>$23 </td>
+        <td align="right">90.0</td>
+        <td align="right">3</td>
+        </tr>
+        <tr>
+        <td align="right">77</td>
+        <td>Prager Riesling Federspiel Trocken Wachau Steinriegl-</td>
+        <td>A fruity style, boasting apricot, ripe apple, white pepper, mineral and floral notes, this is harmonious and fresh, leaving a sapid, mineral aftertaste. Drink now. 2,083 cases made. —BS</td>
+        <td>2015</td>
+        <td>$35 </td>
+        <td align="right">92.0</td>
+        <td align="right">3</td>
+        </tr>
+        <tr>
+        <td align="right">78</td>
+        <td>Alban Syrah Edna Valley Reva Alban Estate-</td>
+        <td>Refined yet dynamic, with a structured and balanced core of acidity and tannins framed by formidable black raspberry, smoky meat, licorice and orange zest flavors that build momentum toward polished tannins. Drink now through 2026. 2,000 cases made. —TF</td>
+        <td>2013</td>
+        <td>$98 </td>
+        <td align="right">94.0</td>
+        <td align="right">4</td>
+        </tr>
+        <tr>
+        <td align="right">79</td>
+        <td>Michele Castellani Valpolicella Classico Superiore San Michele Ripasso-</td>
+        <td>This mouthwatering red is medium-bodied and expressive, offering lightly chewy tannins and flavors of sun-dried cherry, strawberry preserves and star anise, with pleasing hints of herb and mineral on the finish. Drink now through 2022. 5,000 cases made. —AN</td>
+        <td>2015</td>
+        <td>$28 </td>
+        <td align="right">90.0</td>
+        <td align="right">3</td>
+        </tr>
+        <tr>
+        <td align="right">80</td>
+        <td>Dutton-Goldfield Pinot Noir Russian River Valley Dutton Ranch-</td>
+        <td>Well-centered on a mix of cherry, plum and raspberry flavors, elegant and refined, with sufficient tannins to hold attention. Ends with a clean, mouthwatering aftertaste that echoes the fruit and spice notes. Drink now through 2024. 5,880 cases made. —JL</td>
+        <td>2015</td>
+        <td>$44 </td>
+        <td align="right">92.0</td>
+        <td align="right">3</td>
+        </tr>
+        <tr>
+        <td align="right">81</td>
+        <td>Pali Wine Co. Pinot Noir Sonoma Coast Riviera-</td>
+        <td>Juicy and generous, featuring a rich, smooth core of plum and raspberry flavors, highlighted by zesty floral scents that accentuate the aroma and fruitiness. Agreeably supple, with easygoing tannins. Drink now through 2022. 3,200 cases made. —JL</td>
+        <td>2015</td>
+        <td>$22 </td>
+        <td align="right">90.0</td>
+        <td align="right">3</td>
+        </tr>
+        <tr>
+        <td align="right">82</td>
+        <td>Domaine Faiveley Mercurey Clos des Myglands-</td>
+        <td>Ripe and pure, featuring cherry, blackberry, raspberry, mineral and light toast notes. Balanced and intense, playing out on the long, mouthwatering finish. Best from 2019 through 2032. 1,400 cases imported. —BS</td>
+        <td>2015</td>
+        <td>$53 </td>
+        <td align="right">93.0</td>
+        <td align="right">3</td>
+        </tr>
+        <tr>
+        <td align="right">83</td>
+        <td>Simone Santini Vernaccia di San Gimignano Tenuta Le Calcinaie-</td>
+        <td>A bright, juicy version, boasting floral, peach, grapefruit and honey aromas and flavors. Pure and elegant, finishing with a characteristic hint of bitterness. Drink now. 2,350 cases made. —BS</td>
+        <td>2015</td>
+        <td>$18 </td>
+        <td align="right">90.0</td>
+        <td align="right">3</td>
+        </tr>
+        <tr>
+        <td align="right">84</td>
+        <td>Josep Maria Raventós i Blanc Brut Nature Vino Espumoso de la Finca-</td>
+        <td>A minerally version, with up-front petrol and spice notes lacing the poached cherry, salted almond and lemon peel flavors that ride the delicate mousse. Elegant and harmonious. Disgorged February 2017. Drink now through 2020. 4,100 cases made. —AN</td>
+        <td>2013</td>
+        <td>$33 </td>
+        <td align="right">90.0</td>
+        <td align="right">3</td>
+        </tr>
+        <tr>
+        <td align="right">85</td>
+        <td>Lancaster Cabernet Sauvignon Alexander Valley-</td>
+        <td>A big, rich Cabernet, with firm, structured tannins that are powerful and edgy, framing the core of blackberry, black cherry, plum and espresso flavors. An impressive effort. Best from 2019 through 2029. 4,075 cases made. —JL</td>
+        <td>2014</td>
+        <td>$75 </td>
+        <td align="right">94.0</td>
+        <td align="right">4</td>
+        </tr>
+        <tr>
+        <td align="right">86</td>
+        <td>Chartogne-Taillet Brut Champagne Cuvée Ste.-Anne-</td>
+        <td>A bright, finely meshed version that shows beautiful harmony throughout, offering flavors of Gala apple, spring forest, almond pastry and lemon curd riding the creamy mousse. Lasting, spiced finish. Disgorged February 2016. Drink now through 2022. 1,300 cases imported. —AN</td>
+        <td>NV</td>
+        <td>$50 </td>
+        <td align="right">92.0</td>
+        <td align="right">4</td>
+        </tr>
+        <tr>
+        <td align="right">87</td>
+        <td>Fonseca Vintage Port Guimaraens-</td>
+        <td>This is warm and lush in feel, and really well-built, with layers of blueberry, açaí berry and plum reduction flavors rolling through, laced with hints of ganache and fruitcake. Lots of graphite-edged grip lines the finish. Best from 2027 through 2040. 4,500 cases made. —JM</td>
+        <td>2015</td>
+        <td>$58 </td>
+        <td align="right">93.0</td>
+        <td align="right">4</td>
+        </tr>
+        <tr>
+        <td align="right">88</td>
+        <td>Daou Cabernet Sauvignon Adelaida District Estate-</td>
+        <td>Combines rich, deep flavors with a measure of finesse and refinement, allowing the earth-laced red berry and spicy herb notes to shine. Ripe, sturdy tannins lend this structure and traction. Best from 2020 through 2034. 1,000 cases made. —JL</td>
+        <td>2014</td>
+        <td>$85 </td>
+        <td align="right">94.0</td>
+        <td align="right">4</td>
+        </tr>
+        <tr>
+        <td align="right">89</td>
+        <td>Concha y Toro Cabernet Sauvignon Puente Alto Don Melchor-</td>
+        <td>A ripe, rich and full-bodied red, with powerful flavors of dark cherry, plum pudding and currant that feature a lush creaminess. Firm and savory midpalate, ending with a long and refined finish that shows mineral and cocoa butter accents, supported by dusty tannins. Drink now through 2024. 7,850 cases made. —KM</td>
+        <td>2014</td>
+        <td>$120 </td>
+        <td align="right">96.0</td>
+        <td align="right">4</td>
+        </tr>
+        <tr>
+        <td align="right">90</td>
+        <td>Château Léoville Las Cases St.-Julien-</td>
+        <td>Densely packed, with cassis, steeped plum and blackberry coulis notes that are compressed with layers of cold charcoal and graphite. Very pure, giving this a long, sleek and racy feel, while an iron underpinning drives the finish. Best from 2020 through 2040. 12,500 cases made. —JM</td>
+        <td>2014</td>
+        <td>$135 </td>
+        <td align="right">95.0</td>
+        <td align="right">4</td>
+        </tr>
+        <tr>
+        <td align="right">91</td>
+        <td>Garofoli Verdicchio dei Castelli di Jesi Podium-</td>
+        <td>An elegant, creamy white, backed by sleek, citrusy acidity, this shows a subtle mix of poached pear, grated ginger and stony mineral flavors, accented by hints of crushed almond. Drink now through 2020. 3,500 cases made. —AN</td>
+        <td>2014</td>
+        <td>$25 </td>
+        <td align="right">90.0</td>
+        <td align="right">3</td>
+        </tr>
+        <tr>
+        <td align="right">92</td>
+        <td>Revana Cabernet Sauvignon Napa Valley-</td>
+        <td>This is a thrilling wine, from the opening vanilla bean scents to the pure, rich and deep core of blackberry, currant and black licorice flavors. Folds in espresso and cedar notes amid the long and persistent finish. Best from 2019 through 2038. 1,500 cases made. —JL</td>
+        <td>2014</td>
+        <td>$165 </td>
+        <td align="right">96.0</td>
+        <td align="right">4</td>
+        </tr>
+        <tr>
+        <td align="right">93</td>
+        <td>di Meo Greco di Tufo G-</td>
+        <td>Tarragon and thyme notes lace flavors of green melon and lime granita in this juicy, light- to medium-bodied white. Fresh, balanced and minerally, with a spiced finish. Drink now through 2020. 5,500 cases made. —AN</td>
+        <td>2016</td>
+        <td>$27 </td>
+        <td align="right">90.0</td>
+        <td align="right">3</td>
+        </tr>
+        <tr>
+        <td align="right">94</td>
+        <td>Selbach-Oster Riesling Kabinett Halbtrocken Mosel Zeltinger Himmelreich-</td>
+        <td>Pungent, with aromas of slate and ripe orchard fruit, this sleek white displays complex flavors of flowers, peach, quince and slate. A hint of chive works into the mix as this remains persistent on the finish. Drink now through 2024. 140 cases imported. —BS</td>
+        <td>2015</td>
+        <td>$20 </td>
+        <td align="right">93.0</td>
+        <td align="right">3</td>
+        </tr>
+        <tr>
+        <td align="right">95</td>
+        <td>Feudi del Pisciotto Nero d&#39;Avola Terre Siciliane Versace-</td>
+        <td>A well-focused, rich red in a balanced, medium-bodied frame, this offers a subtle underpinning of tarry mineral notes layered over light, sculpted tannins and flavors of mulberry and dried fig, with hints of herbes de Provence and mocha. Drink now through 2025. 1,166 cases made. —AN</td>
+        <td>2015</td>
+        <td>$33 </td>
+        <td align="right">91.0</td>
+        <td align="right">4</td>
+        </tr>
+        <tr>
+        <td align="right">96</td>
+        <td>Odoardi Calabria GB-</td>
+        <td>Finely balanced and creamy, this bold red offers a rich range of black cherry coulis, fig cake, dried marjoram and oak spice flavors, layered with sculpted tannins. Long on the palate, with a lasting spicy mineral note. Gaglioppo, Magliocco Canino, Nerello Cappuccio and Greco Nero. Drink now through 2027. 3,500 cases made. —AN</td>
+        <td>2014</td>
+        <td>$45 </td>
+        <td align="right">92.0</td>
+        <td align="right">4</td>
+        </tr>
+        <tr>
+        <td align="right">97</td>
+        <td>Prats &amp; Symington Douro Chryseia-</td>
+        <td>A powerful and concentrated red, featuring kirsch, red plum and baker&#39;s chocolate notes, balanced by tarragon, slate and violet details. Elegant, with supple tannins framing the long finish, which is laced with hot stone, olive and licorice accents. Drink now through 2023. 2,000 cases made. —GS</td>
+        <td>2014</td>
+        <td>$75 </td>
+        <td align="right">94.0</td>
+        <td align="right">4</td>
+        </tr>
+        <tr>
+        <td align="right">98</td>
+        <td>Robert Weil Riesling Qualitätswein Trocken Rheingau Kiedricher Gräfenberg GG-</td>
+        <td>Very rich and complex, with enveloping flavors of baked apple, ripe citrus, nectarine and dried pear supported by a powerful structure. Lush midpalate, with a notes of dried guava, followed by unctuous spiciness on the finish, with accents of white chocolate, chamomile and dried herbs. Best from 2018 through 2026. 2,500 cases made. —KM</td>
+        <td>2015</td>
+        <td>$92 </td>
+        <td align="right">95.0</td>
+        <td align="right">4</td>
+        </tr>
+        <tr>
+        <td align="right">99</td>
+        <td>Sadie Family &#39;T Voetpad Swartland-</td>
+        <td>Dried lemon peel, fennel seed and honeysuckle notes give this a high-pitched entry, but the core offers up Jonagold apple and melon fruit while the finish pulls in fresh salted butter and verbena details, imparting remarkable range and length. Chenin Blanc, Sémillon, Palomino and Muscat. Drink now through 2024. 280 cases made. —JM</td>
+        <td>2015</td>
+        <td>$67 </td>
+        <td align="right">95.0</td>
+        <td align="right">3</td>
+        </tr>
+        </tbody></table>
+    </div>
+  </div>
+</div>
+  <!-- End your project here-->
+
+  <!-- jQuery -->
+  <script type="text/javascript" src="static/js/jquery.min.js"></script>
+  <!-- Bootstrap tooltips -->
+  <script type="text/javascript" src="static/js/popper.min.js"></script>
+  <!-- Bootstrap core JavaScript -->
+  <script type="text/javascript" src="static/js/bootstrap.min.js"></script>
+  <!-- MDB core JavaScript -->
+  <script type="text/javascript" src="static/js/mdb.min.js"></script>
+  <!-- Your custom scripts (optional) -->
+  <script type="text/javascript"></script>
+  <!-- MDBootstrap Datatables  -->
+  <script type="text/javascript" src="static/js/datatables2.min.js"></script>
+  <!-- MDBootstrap Datatables  -->
+  <script type="text/javascript" src="static/js/cards-extended.min.js"></script>
+  <script>
+    $(document).ready(function () {
+    $('#dtVerticalScrollExample').DataTable({
+    "scrollY": "1000px",
+    "scrollCollapse": true,
+    });
+    $('.dataTables_length').addClass('bs-select');
+    });
+  </script>
+    <script>
+      $(document).ready(function () {
+      $('#dtVerticalScrollExample2').DataTable({
+      "scrollY": "1000px",
+      "scrollCollapse": true,
+      });
+      $('.dataTables_length').addClass('bs-select');
+      });
+    </script>
+  <script>
+    $(document).ready(function () {
+    $('#dtVerticalScrollExample3').DataTable({
+    "scrollY": "1000px",
+    "scrollCollapse": true,
+    });
+    $('.dataTables_length').addClass('bs-select');
+    });
+  </script>
+
+</body>
+</html>

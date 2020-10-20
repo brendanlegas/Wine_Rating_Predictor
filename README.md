@@ -1,1 +1,2 @@
-# Wine_Rating_Predictor
+# winenlp
+NLP model using wine descriptions to evaluate quality

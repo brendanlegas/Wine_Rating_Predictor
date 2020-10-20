@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>Material Design for Bootstrap</title>
+  <!-- MDB icon -->
+  <link rel="icon" href="img/mdb-favicon.ico" type="image/x-icon">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
+  <!-- Google Fonts Roboto -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap">
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="static/bootstrap.min.css">
+  <!-- Material Design Bootstrap -->
+  <link rel="stylesheet" href="static/mdb.min.css">
+  <!-- Your custom styles (optional) -->
+  <link rel="stylesheet" href="static/style.css">
+  <!-- MDBootstrap Datatables  -->
+  <link href="static/datatables2.min.css" rel="stylesheet">
+  <!-- MDBootstrap Card Addons  -->
+  <link href="static/cards-extended.min.css" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Start your project here-->  
+  <nav class="navbar navbar-expand-lg navbar-dark primary-color">
+    <a class="navbar-brand" href="/">NLP Wine</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item active">
+          <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="model">Model</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="winelist">Wine List</a>
+        </li>
+      </ul>
+    </div>
+    <!-- Button to trigger modal-->
+    <button class="btn purple-gradient float-right" data-toggle="modal" data-target="#wineModelModal"><i class="fas fa-wine-bottle mr-2"></i>Try it out!</button>
+    <!-- Modal -->
+  <div class="modal fade" id="wineModelModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+  aria-hidden="true">
+
+  <!-- Add .modal-dialog-centered to .modal-dialog to vertically center the modal -->
+  <div class="modal-dialog modal-dialog-centered" role="document">
+
+
+    <div class="modal-content">
+      <!-- <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Write a wine review!</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div> -->
+      <div class="modal-body">
+        <div class="md-form mb-4 purple-textarea active-purple-textarea">
+          <i class="fas fa-angle-double-right prefix"></i>
+          <textarea id="form21" class="md-textarea form-control" rows="3"></textarea>
+          <label for="form21">Write a wine review!</label>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Rate</button>
+      </div>
+    </div>
+  </div>
+</div>
+  </nav>
+
+  <div class='jumbotron text-center blue-grey lighten-5'>
+    <div class='mx-auto'>
+      <img src="https://static.sommelierschoiceawards.com/cont/news/imagePot/SommeliersChoiceAwardsUS-08272018041727000000-5b837b5791131.jpg">
+    </div>
+  </div>
+
+
+<!-- Jumbotron -->
+<div class="jumbotron text-center primary-color lighten-5">
+
+    <!-- Title -->
+    <h1 class="card-title h2">NLP for Predicting Wine Ratings</h1>
+  
+    <!-- Grid row -->
+    <div class="row d-flex justify-content-center">
+  
+      <!-- Grid column -->
+      <div class="col-xl-7 pb-2">
+  
+        <p class="card-text">This machine learning model takes wine descriptions, and predicts the rating it would receive from a sommelier.</p>
+  
+      </div>
+      <!-- Grid column -->
+  
+    </div>
+    <!-- Grid row -->
+  
+    <hr class="my-4 pb-2">
+  
+    <button class="btn purple-gradient" ><a href='model'><i class="fas fa-chart-line mr-1"></i>Model</a></button>
+    <button class="btn purple-gradient"><a href='winelist'><i class="fas fa-wine-glass mr-1"></i>Wine List</a></button>
+  
+  </div>
+
+  
+  <!-- Grid column -->
+  <div class="container">
+    <div class='tableauPlaceholder' id='viz1603163707040' style='position: relative'><noscript><a href='#'><img alt=' ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Fi&#47;Final_Project_Visuals&#47;TrainingDataVisuals&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='' /><param name='name' value='Final_Project_Visuals&#47;TrainingDataVisuals' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Fi&#47;Final_Project_Visuals&#47;TrainingDataVisuals&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='language' value='en' /><param name='filter' value='publish=yes' /></object></div>                <script type='text/javascript'>                    var divElement = document.getElementById('viz1603163707040');                    var vizElement = divElement.getElementsByTagName('object')[0];                    if ( divElement.offsetWidth > 800 ) { vizElement.style.width='100%';vizElement.style.height=(divElement.offsetWidth*0.75)+'px';} else if ( divElement.offsetWidth > 500 ) { vizElement.style.width='100%';vizElement.style.height=(divElement.offsetWidth*0.75)+'px';} else { vizElement.style.width='100%';vizElement.style.height='927px';}                     var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
+    </div>
+
+<div style="height: 20px;"></div>
+
+<!-- <div class='tableauPlaceholder' id='viz1603156619106' style='position: relative'><noscript><a href='#'><img alt=' ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Fi&#47;Final_Project_Visuals&#47;U_S_States&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='' /><param name='name' value='Final_Project_Visuals&#47;U_S_States' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Fi&#47;Final_Project_Visuals&#47;U_S_States&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='language' value='en' /></object></div>                <script type='text/javascript'>                    var divElement = document.getElementById('viz1603156619106');                    var vizElement = divElement.getElementsByTagName('object')[0];                    vizElement.style.width='100%';vizElement.style.height=(divElement.offsetWidth*0.75)+'px';                    var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script> -->
+  </div>
+  <!-- Jumbotron -->
+  
+  <div class="jumbotron text-center blue-grey lighten-5">
+  <a class="btn-floating btn-lg purple-gradient"><i class="fab fa-js"></i></a>
+  <a class="btn-floating btn-lg purple-gradient"><i class="fab fa-python"></i></a>
+    <a class="btn-floating btn-lg purple-gradient"><i class="fab fa-bootstrap"></i></a>
+    <a class="btn-floating btn-lg purple-gradient"><i class="fab fa-css3"></i></a>
+    <a class="btn-floating btn-lg purple-gradient"><i class="fab fa-html5"></i></a>
+  </div>
+  
+  <div class="jumbotron my-5 blue-grey lighten-5">
+
+
+    <!--Section: Content-->
+    <section class="team-section text-center dark-grey-text">
+  
+      <!-- Section heading -->
+      <h3 class="font-weight-bold pb-2 mb-4">The Team</h3>
+      <!-- Grid row -->
+      <div class="row text-center">
+  
+        <!-- Grid column -->
+        <div class="col-md-6 mb-6">
+          <div class="avatar mx-auto">
+            <img src="https://static.thenounproject.com/png/2734644-200.png" class="rounded z-depth-1-half purple-gradient" alt="Sample avatar">
+          </div>
+            <h4 class="font-weight-bold dark-grey-text my-4">Brendan Legas</h4>
+            <h6 class="text-uppercase grey-text mb-3"><strong>Data Scientist</strong></h6>
+            <!-- Linkedin-->
+            <a type="button" class="btn-floating btn-sm mx-1 mb-0 btn-fb" href='https://www.linkedin.com/in/brendan-legas-739b27121/'>
+              <i class="fab fa-linkedin-in"></i>
+            </a>
+            <!--Github -->
+            <a type="button" class="btn-floating btn-sm mx-1 mb-0 btn-dribbble" href='https://github.com/brendanlegas'>
+              <i class="fab fa-github"></i>
+            </a>
+        </div>
+        <!-- Grid column -->
+  
+        <!-- Grid column -->
+        <div class="col-md-6 mb-6">
+          <div class="avatar mx-auto">
+            <img src="https://static.thenounproject.com/png/2734644-200.png" class="rounded z-depth-1-half purple-gradient" alt="Sample avatar">
+          </div>
+            <h4 class="font-weight-bold dark-grey-text my-4">Nicholas Durhman</h4>
+            <h6 class="text-uppercase grey-text mb-3"><strong>Data Scientist</strong></h6>
+            <!-- Linkedin-->
+            <a type="button" class="btn-floating btn-sm mx-1 mb-0 btn-fb" href='https://www.linkedin.com/in/ndurhman/'>
+              <i class="fab fa-linkedin-in"></i>
+            </a>
+            <!--Github -->
+            <a type="button" class="btn-floating btn-sm mx-1 mb-0 btn-dribbble" href='https://github.com/Indy4G'>
+              <i class="fab fa-github"></i>
+            </a>
+        </div>
+        <!-- Grid column -->
+  
+      </div>
+      <!-- Grid row -->
+  
+    </section>
+    <!--Section: Content-->
+  
+  
+  </div>
+
+</div>
+  <!-- End your project here-->
+
+  <!-- jQuery -->
+  <script type="text/javascript" src="static/js/jquery.min.js"></script>
+  <!-- Bootstrap tooltips -->
+  <script type="text/javascript" src="static/js/popper.min.js"></script>
+  <!-- Bootstrap core JavaScript -->
+  <script type="text/javascript" src="static/js/bootstrap.min.js"></script>
+  <!-- MDB core JavaScript -->
+  <script type="text/javascript" src="static/js/mdb.min.js"></script>
+  <!-- Your custom scripts (optional) -->
+  <script type="text/javascript"></script>
+  <!-- MDBootstrap Datatables  -->
+  <script type="text/javascript" src="static/js/datatables2.min.js"></script>
+  <!-- MDBootstrap Datatables  -->
+  <script type="text/javascript" src="static/js/cards-extended.min.js"></script>
+  <script>
+    $(document).ready(function () {
+    $('#dtVerticalScrollExample').DataTable({
+    "scrollY": "1000px",
+    "scrollCollapse": true,
+    });
+    $('.dataTables_length').addClass('bs-select');
+    });
+  </script>
+    <script>
+      $(document).ready(function () {
+      $('#dtVerticalScrollExample2').DataTable({
+      "scrollY": "1000px",
+      "scrollCollapse": true,
+      });
+      $('.dataTables_length').addClass('bs-select');
+      });
+    </script>
+  <script>
+    $(document).ready(function () {
+    $('#dtVerticalScrollExample3').DataTable({
+    "scrollY": "1000px",
+    "scrollCollapse": true,
+    });
+    $('.dataTables_length').addClass('bs-select');
+    });
+  </script>
+
+</body>
+</html>

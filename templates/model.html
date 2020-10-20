@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>Material Design for Bootstrap</title>
+  <!-- MDB icon -->
+  <link rel="icon" href="img/mdb-favicon.ico" type="image/x-icon">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
+  <!-- Google Fonts Roboto -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap">
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="static/bootstrap.min.css">
+  <!-- Material Design Bootstrap -->
+  <link rel="stylesheet" href="static/mdb.min.css">
+  <!-- Your custom styles (optional) -->
+  <link rel="stylesheet" href="static/style.css">
+  <!-- MDBootstrap Datatables  -->
+  <link href="static/datatables2.min.css" rel="stylesheet">
+  <!-- MDBootstrap Card Addons  -->
+  <link href="static/cards-extended.min.css" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Start your project here-->  
+  <nav class="navbar navbar-expand-lg navbar-dark primary-color">
+    <a class="navbar-brand" href="/">NLP Wine</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="model">Model</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="winelist">Wine List</a>
+        </li>
+      </ul>
+    </div>
+    <!-- Button to trigger modal-->
+    <button class="btn purple-gradient float-right" data-toggle="modal" data-target="#wineModelModal"><i class="fas fa-wine-bottle mr-2"></i>Try it out!</button>
+    <!-- Modal -->
+  <div class="modal fade" id="wineModelModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+  aria-hidden="true">
+
+  <!-- Add .modal-dialog-centered to .modal-dialog to vertically center the modal -->
+  <div class="modal-dialog modal-dialog-centered" role="document">
+
+
+    <div class="modal-content">
+      <!-- <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Write a wine review!</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div> -->
+      <div class="modal-body">
+        <div class="md-form mb-4 purple-textarea active-purple-textarea">
+          <i class="fas fa-angle-double-right prefix"></i>
+          <textarea id="form21" class="md-textarea form-control" rows="3"></textarea>
+          <label for="form21">Write a wine review!</label>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Rate</button>
+      </div>
+    </div>
+  </div>
+</div>
+  </nav>
+<div style="height: 20px;"></div>
+<!--Accordion wrapper-->
+<div class="container">
+<div class="accordion md-accordion accordion-1" id="accordionEx23" role="tablist">
+    <div class="card">
+      <div class="card-header primary-color z-depth-1" role="tab" id="heading96">
+        <h1 class="text-uppercase mb-0 py-1">
+          <a class="white-text font-weight-bold" data-toggle="collapse" href="#collapse96" aria-expanded="true"
+            aria-controls="collapse96">
+            #Import<a class="btn-floating float-right btn-lg purple-gradient"><i class="fas fa-code"></i></a>
+          </a>
+        </h1>
+      </div>
+      <div id="collapse96" class="collapse show" role="tabpanel" aria-labelledby="heading96"
+        data-parent="#accordionEx23">
+        <div class="card-body">
+          <div class="row my-4">
+            <div class="col-md-12">
+                <div class='container'><img src='static/images/import.png' class='img-fluid'></div> 
+            </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-header primary-color z-depth-1" role="tab" id="heading97">
+        <h1 class="text-uppercase mb-0 py-1">
+          <a class="white-text font-weight-bold" data-toggle="collapse" href="#collapse97" aria-expanded="true"
+            aria-controls="collapse97">
+             #Clean<a class="btn-floating float-right btn-lg purple-gradient"><i class="fas fa-code"></i></a>
+          </a>
+        </h1>
+      </div>
+      <div id="collapse97" class="collapse show" role="tabpanel" aria-labelledby="heading97"
+        data-parent="#accordionEx23">
+        <div class="card-body">
+          <div class="row my-4">
+            <div class="col-md-12">
+                <div class='container'><img src='static/images/clean.png' class='img-fluid'></div>
+                <div class='container'><img src='static/images/clean2.png' class='img-fluid'></div>
+
+            </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    <div class="card">
+      <div class="card-header primary-color z-depth-1" role="tab" id="heading98">
+        <h1 class="text-uppercase mb-0 py-1">
+          <a class="white-text font-weight-bold" data-toggle="collapse" href="#collapse98" aria-expanded="true"
+            aria-controls="collapse98">
+            #Analyze<a class="btn-floating float-right btn-lg purple-gradient"><i class="fas fa-chart-area"></i></a>
+          </a>
+        </h1>
+      </div>
+      <div id="collapse98" class="collapse show" role="tabpanel" aria-labelledby="heading98"
+        data-parent="#accordionEx23">
+        <div class="card-body">
+          <div class="row my-4">
+            <div class="col-md-12">
+                <div class='container'><img src='static/images/analyze.png' class='img-fluid'></div>
+                <div class='container'><img src='static/images/analyze2.png' class='img-fluid'></div>
+            </div>
+            </div>
+          </div>
+        </div>
+      </div>
+     <div class="card">
+      <div class="card-header primary-color z-depth-1" role="tab" id="heading99">
+        <h1 class="text-uppercase mb-0 py-1">
+          <a class="white-text font-weight-bold" data-toggle="collapse" href="#collapse99" aria-expanded="true"
+            aria-controls="collapse99">
+            #Stopwords <a class="btn-floating float-right btn-lg purple-gradient"><i class="fas fa-code"></i></a>
+          </a>
+        </h1>
+      </div>
+      <div id="collapse99" class="collapse show" role="tabpanel" aria-labelledby="heading99"
+        data-parent="#accordionEx23">
+        <div class="card-body">
+          <div class="row my-4">
+            <div class="col-md-12">
+                <div class='container'><img src='static/images/stopwords.png' class='img-fluid'></div>
+            </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    <div class="card">
+      <div class="card-header primary-color z-depth-1" role="tab" id="heading100">
+        <h1 class="text-uppercase mb-0 py-1">
+          <a class="white-text font-weight-bold" data-toggle="collapse" href="#collapse100" aria-expanded="true"
+            aria-controls="collapse100">
+            #Tokenize <a class="btn-floating float-right btn-lg purple-gradient"><i class="fas fa-code"></i></a>
+          </a>
+        </h1>
+      </div>
+      <div id="collapse100" class="collapse show" role="tabpanel" aria-labelledby="heading100"
+        data-parent="#accordionEx23">
+        <div class="card-body">
+          <div class="row my-4">
+            <div class="col-md-12">
+                <div class='container'><img src='static/images/tokenize.png' class='img-fluid'></div>
+
+            </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    <div class="card">
+      <div class="card-header primary-color z-depth-1" role="tab" id="heading101">
+        <h1 class="text-uppercase mb-0 py-1">
+          <a class="white-text font-weight-bold" data-toggle="collapse" href="#collapse101" aria-expanded="true"
+            aria-controls="collapse101">
+            #Train <a class="btn-floating float-right btn-lg purple-gradient"><i class="fas fa-code"></i></a>
+          </a>
+        </h1>
+      </div>
+      <div id="collapse101" class="collapse show" role="tabpanel" aria-labelledby="heading101"
+        data-parent="#accordionEx23">
+        <div class="card-body">
+          <div class="row my-4">
+            <div class="col-md-12">
+                <div class='container'><img src='static/images/train.png' class='img-fluid'></div>
+              
+            </div>
+            </div>
+          </div>
+        </div>
+      </div>
+     <div class="card">
+      <div class="card-header primary-color z-depth-1" role="tab" id="heading102">
+        <h1 class="text-uppercase mb-0 py-1">
+          <a class="white-text font-weight-bold" data-toggle="collapse" href="#collapse102" aria-expanded="true"
+            aria-controls="collapse102">
+            
+            #Test <a class="btn-floating float-right btn-lg purple-gradient"><i class="fas fa-code"></i></a>
+          </a>
+        </h1>
+      </div>
+      <div id="collapse102" class="collapse show" role="tabpanel" aria-labelledby="heading102"
+        data-parent="#accordionEx23">
+        <div class="card-body">
+          <div class="row my-4">
+            <div class="col-md-12">
+                <div class='container'><img src='static/images/test.png' class='img-fluid'></div>
+              
+            </div>
+            </div>
+          </div>
+        </div>
+      </div>
+  <!--Accordion wrapper-->
+</div>
+</div>
+  <!-- End your project here-->
+
+  <!-- jQuery -->
+  <script type="text/javascript" src="static/js/jquery.min.js"></script>
+  <!-- Bootstrap tooltips -->
+  <script type="text/javascript" src="static/js/popper.min.js"></script>
+  <!-- Bootstrap core JavaScript -->
+  <script type="text/javascript" src="static/js/bootstrap.min.js"></script>
+  <!-- MDB core JavaScript -->
+  <script type="text/javascript" src="static/js/mdb.min.js"></script>
+  <!-- Your custom scripts (optional) -->
+  <script type="text/javascript"></script>
+  <!-- MDBootstrap Datatables  -->
+  <script type="text/javascript" src="static/js/datatables2.min.js"></script>
+  <!-- MDBootstrap Datatables  -->
+  <script type="text/javascript" src="static/js/cards-extended.min.js"></script>
+  <script>
+    $(document).ready(function () {
+    $('#dtVerticalScrollExample').DataTable({
+    "scrollY": "1000px",
+    "scrollCollapse": true,
+    });
+    $('.dataTables_length').addClass('bs-select');
+    });
+  </script>
+    <script>
+      $(document).ready(function () {
+      $('#dtVerticalScrollExample2').DataTable({
+      "scrollY": "1000px",
+      "scrollCollapse": true,
+      });
+      $('.dataTables_length').addClass('bs-select');
+      });
+    </script>
+  <script>
+    $(document).ready(function () {
+    $('#dtVerticalScrollExample3').DataTable({
+    "scrollY": "1000px",
+    "scrollCollapse": true,
+    });
+    $('.dataTables_length').addClass('bs-select');
+    });
+  </script>
+
+</body>
+</html>
