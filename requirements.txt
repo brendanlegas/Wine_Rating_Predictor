@@ -21,6 +21,7 @@ Pygments==2.2.0
 simplegeneric==0.8.1
 six==1.11.0
 sklearn
+sklearn.externals
 SQLAlchemy==1.1.15
 traitlets==4.3.2
 wcwidth==0.1.7
