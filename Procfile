@@ -1,1 +1,1 @@
-web: gunicorn wine_ratings.app:app
+web: gunicorn wineratingpredictor.app:app
