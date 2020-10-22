@@ -20,8 +20,8 @@ def model():
 
 @app.route('/predict', methods=['POST'])
 def predict():
-    nlp_model = open('wine_nlp_mod.pkl','rb')
-    vectorizer = open('vectorizer.pkl','rb')
+    nlp_model = open('wine_nlp_model2.pkl','rb')
+    vectorizer = open('vectorizer2.pkl','rb')
     rfc = joblib.load(nlp_model)
     cv = joblib.load(vectorizer)
     #vectorizer = CountVectorizer()
@@ -31,7 +31,7 @@ def predict():
         data = [input_text]
         vect = cv.transform(data).toarray()
         model_prediction = rfc.predict(vect)
-    return render_template('result.html', prediction = model_prediction)
+    return render_template('top_wine_list.html', prediction = model_prediction)
 
 @app.route('/winelist')
 def winelist():

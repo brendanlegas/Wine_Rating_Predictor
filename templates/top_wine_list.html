@@ -44,37 +44,6 @@
         </li>
       </ul>
     </div>
-    <!-- Button to trigger modal-->
-    <button class="btn purple-gradient float-right" data-toggle="modal" data-target="#wineModelModal"><i class="fas fa-wine-bottle mr-2"></i>Try it out!</button>
-    <!-- Modal -->
-  <div class="modal fade" id="wineModelModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
-  aria-hidden="true">
-
-  <!-- Add .modal-dialog-centered to .modal-dialog to vertically center the modal -->
-  <div class="modal-dialog modal-dialog-centered" role="document">
-
-
-    <div class="modal-content">
-      <!-- <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLongTitle">Write a wine review!</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div> -->
-      <div class="modal-body">
-        <div class="md-form mb-4 purple-textarea active-purple-textarea">
-          <i class="fas fa-angle-double-right prefix"></i>
-          <textarea id="form21" class="md-textarea form-control" rows="3"></textarea>
-          <label for="form21">Write a wine review!</label>
-        </div>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Rate</button>
-      </div>
-    </div>
-  </div>
-</div>
   </nav>
   <div style="height: 20px;"></div>
   <div class="container">
@@ -104,6 +73,33 @@
   </div>
   </div>
   <div style="height: 20px;"></div>
+  <div class='container'>
+     <!--Rating text box-->
+     <form action="{{ url_for('predict')}}" method="POST">
+      <!--<textarea id="form21" class="md-textarea form-control" rows="3"></textarea>-->
+      <div class="md-form mb-4 primary-textarea active-primary-textarea-2 fluid">
+        <textarea id="form23" name='description'class="md-textarea form-control" rows="3"></textarea>
+        <label for="form23">Write your own wine review!</label>
+    </div>
+    <input type="submit" class="btn purple-gradient align-right" value="Rate!"></input>
+      <div class="results float-right">
+      {% if prediction == 1%}
+      <h3 style="color:blue;">1 - Very Bad</h3>
+      {% elif prediction == 2%}
+        <h3 style="color:blue;">2- Bad</h3>
+        {% elif prediction == 3%}
+        <h3 style="color:blue;">3 - Average</h3>
+        {% elif prediction == 4%}
+        <h3 style="color:blue;">4 - Good</h3>
+        {% elif prediction == 5%}
+        <h3 style="color:blue;">5 - Incredible!</h3>
+        {% endif %}
+      </div>
+  </form>
+
+  </div>
+  
+<div style="height: 10px;"></div>
 <div class="container">
   <ul class="nav nav-tabs nav-justified md-tabs primary-color" id="myTabJust" role="tablist">
     <li class="nav-item">
